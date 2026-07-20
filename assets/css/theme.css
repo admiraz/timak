@@ -1,0 +1,17 @@
+:root { --bs-primary: #E71B24; --bs-primary-rgb: 231, 27, 36; --bs-secondary: #001F3F; --bs-secondary-rgb: 0, 31, 63; }
+
+.about-bg{
+    --bs-about-bg-background: var(--bs-custom-gray-1);
+    --bs-about-bg-contents-color: var(--bs-body-color);
+    --bs-heading-color: var(--bs-secondary);
+}
+
+.video-contents{
+    --bs-video-contents-bg: var(--bs-custom-gray-1);
+    --bs-video-contents-color: var(--bs-body-color);
+    --bs-heading-color: var(--bs-secondary);
+}
+
+.video-contents-list svg{
+    color: var(--bs-primary);
+}

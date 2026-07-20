@@ -1,0 +1,110 @@
+
+.landing-page{
+    @include media-breakpoint-down(lg){
+        .display-2{
+            font-size: 110px;
+        }
+        .display-3{
+            font-size: 85px;
+        }
+    }
+    @include media-breakpoint-down(md){
+        .display-2{
+            font-size: 60px;
+        }
+        .display-3{
+            font-size: 50px;
+        }
+    }
+    @include media-breakpoint-down(sm){
+        .display-2{
+            font-size: 52px;
+        }
+        .display-3{
+            font-size: 40px;
+        }
+    }
+}
+.hero-landing{
+    background-image: url('../images/hero-landing.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 100px;
+    @include media-breakpoint-down(xxl){
+        padding-top: 84px;
+    }
+    @include media-breakpoint-down(md) {        
+        padding-top: 68px;
+    }
+    .btn-primary {
+        
+        --#{$prefix}btn-hover-color: var(--#{$prefix}white);
+        --#{$prefix}btn-active-color: var(--#{$prefix}white); 
+        --#{$prefix}btn-hover-border-color: var(--#{$prefix}white);   
+        --#{$prefix}btn-active-border-color: var(--#{$prefix}white); 
+    
+        --#{$prefix}btn-after-bg: var(--#{$prefix}primary);
+        --#{$prefix}btn-after-color: var(--#{$prefix}secondary);
+    }
+}
+.hero-landing-contents{
+    --#{$prefix}landing-contents-padding: 160px 0 230px 0;
+    --#{$prefix}landing-contents-max-width: 1250px;
+    --#{$prefix}hero-btns-margin-top: 56px;
+    padding: var(--#{$prefix}landing-contents-padding);
+    max-width: var(--#{$prefix}landing-contents-max-width);
+    margin: 0 auto;
+    .industria-button{
+        margin-top: var(--#{$prefix}hero-btns-margin-top);
+    }
+    @include media-breakpoint-down(xxl){
+        --#{$prefix}landing-contents-padding: 170px 0 140px 0;
+        --#{$prefix}landing-contents-max-width: 1000px;
+        --#{$prefix}hero-btns-margin-top: 45px;
+    }
+    @include media-breakpoint-down(md) {        
+        --#{$prefix}hero-btns-margin-top: 36px;
+        --#{$prefix}landing-contents-padding: 220px 0 110px 0;
+    }
+}
+
+.demo-image {
+    position: relative;
+    top: 0;
+    transition: all 400ms ease-in-out;
+    padding: 40px 16px 40px 16px;
+    
+    &:hover{
+        top: -12px;
+    }
+}
+
+.landing-inner-bg {
+    --#{$prefix}landing-inner-bg: #f6f5f4;
+    background-color: var(--#{$prefix}landing-inner-bg); 
+    border-radius: 8px;
+    img{
+        border-radius: 8px;
+    }
+}
+
+.demos .demo-title {
+    --#{$prefix}demo-title-color: var(--#{$prefix}primary);
+    color: var(--#{$prefix}demo-title-color);
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 1;
+    position: relative;
+    top: 22px;
+    transition: all 400ms ease-in-out;
+}
+
+.dots {
+    position: absolute;
+    top: 8px;
+}
+.circle-dot{
+    --#{$prefix}circle-dot-color: var(--#{$prefix}primary);
+    color: var(--#{$prefix}circle-dot-color);
+}

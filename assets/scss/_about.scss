@@ -1,0 +1,145 @@
+.about-title-width{
+    --#{$prefix}about-title-width: 380px;
+    max-width: var(--#{$prefix}about-title-width); 
+}
+.about-title-mb{
+    --#{$prefix}about-title-mb: 40px;
+    margin-bottom: var(--#{$prefix}about-title-mb);
+
+    @include media-breakpoint-down(xxl){
+        --#{$prefix}about-title-mb: 30px;
+    }
+}
+.about-items-pt{
+    --#{$prefix}about-items-pt: 70px;
+    padding-top: var(--#{$prefix}about-items-pt);
+
+    @include media-breakpoint-down(xxl){
+        --#{$prefix}about-items-pt: 40px;
+    }
+}
+.about-list-title,.about-description{
+    @include media-breakpoint-down(xxl){
+        font-size: 16px;
+    }
+}
+.about-description{    
+    @include media-breakpoint-down(xl){
+        overflow: hidden;    
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; 
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+}
+.about-bg{
+    --#{$prefix}about-bg-background: var(--#{$prefix}secondary);
+    --#{$prefix}about-bg-contents-color: var(--#{$prefix}white);
+    --#{$prefix}heading-color: var(--#{$prefix}white);
+
+    --#{$prefix}about-bg-margin-top: 50px;        
+    --#{$prefix}about-bg-top-spacing: 90px;
+    --#{$prefix}about-bg-right-spacing: 0;
+    --#{$prefix}about-bg-bottom-spacing: 76px;
+    --#{$prefix}about-bg-left-spacing: 60px;         
+
+    color: var(--#{$prefix}about-bg-contents-color);
+    background-color: var(--#{$prefix}about-bg-background);
+    margin-top: var(--#{$prefix}about-bg-margin-top); 
+    padding: var(--#{$prefix}about-bg-top-spacing) var(--#{$prefix}about-bg-right-spacing) var(--#{$prefix}about-bg-bottom-spacing) var(--#{$prefix}about-bg-left-spacing);
+    @include media-breakpoint-down(xxl){
+        --#{$prefix}about-bg-margin-top: 30px;  
+        --#{$prefix}about-bg-top-spacing: 70px;
+    }
+    @include media-breakpoint-down(xl){
+        --#{$prefix}about-bg-margin-top: 0;  
+        --#{$prefix}about-bg-top-spacing: 45px;
+        --#{$prefix}about-bg-bottom-spacing: 50px;
+        --#{$prefix}about-bg-left-spacing: 20px;
+    }    
+    @include media-breakpoint-down(lg){
+        --#{$prefix}about-bg-margin-top: 30px; 
+        --#{$prefix}about-bg-left-spacing: 0;
+    }
+}
+.about-title-fs{
+    @include media-breakpoint-down(xxl){
+        font-size: 42px;
+    }    
+    @include media-breakpoint-down(xl){
+        font-size: 38px;
+    }
+}
+
+.about-contents-start{
+    position: absolute;
+    bottom: var(--#{$prefix}about-bg-bottom-spacing);
+    left: var(--#{$prefix}about-bg-left-spacing);
+    @include media-breakpoint-down(xxl){
+        max-width: 620px;
+    } 
+    @include media-breakpoint-down(xl){
+        max-width: 540px;
+    }
+    @include media-breakpoint-down(lg){
+        position: relative;
+        left: auto;
+        max-width: 720px;
+        margin-right: auto;
+        margin-left: auto;
+        bottom: auto;
+    }
+    @include media-breakpoint-down(md){
+        max-width: 540px;
+    }
+}
+@media screen and (min-width: 1400px) and (max-width: 1550px){
+    .about-bg{
+        --#{$prefix}about-bg-top-spacing: 60px;
+    }
+    .about-contents-start{
+        max-width: 600px;
+    }    
+    .about-title-width{
+        --#{$prefix}about-title-width: 100%;
+    }
+}
+@media screen and (min-width: 1551px) and (max-width: 1700px){
+    .about-contents-start{
+        max-width: 686px;
+    }    
+}
+@media screen and (min-width: 1400px) and (max-width: 1700px){   
+    .about-title-fs{
+        font-size: 60px;
+    }
+}
+
+.about-contents{
+    gap: 40px;
+}
+
+.expertise-wrapper{
+    --#{$prefix}expertise-bg: var(--#{$prefix}secondary);
+    --#{$prefix}expertise-contents-color: var(--#{$prefix}white);
+    --#{$prefix}heading-color: var(--#{$prefix}white);
+
+    color: var(--#{$prefix}expertise-contents-color);
+    background-color: var(--#{$prefix}expertise-bg);
+}
+
+.expertise-inner{
+    --#{$prefix}expertise-padding: 50px;
+    --#{$prefix}expertise-inner-max-width: 610px;
+    padding: 0 var(--#{$prefix}expertise-padding);
+    max-width: var(--#{$prefix}expertise-inner-max-width);
+    @include media-breakpoint-down(lg){
+        --#{$prefix}expertise-padding: 0;
+    }
+}
+.expertise-pricing{
+    position: relative;
+    top: -28px;
+    right: 16px;
+}

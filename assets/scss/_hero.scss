@@ -1,0 +1,127 @@
+.hero-heading{
+    position: relative;    
+    display: inline-block;    
+    width: fit-content;   
+}
+.content-text{
+    --#{$prefix}content-text-padding: 175px 0 165px 0;
+    --#{$prefix}content-text-2-padding: 250px 0 207px 0;
+    padding: var(--#{$prefix}content-text-padding);
+
+    &.content-text-2{
+        padding: var(--#{$prefix}content-text-2-padding);
+    }
+    @include media-breakpoint-down(xxl){
+        --#{$prefix}content-text-padding: 125px 0 135px 0;
+        --#{$prefix}content-text-2-padding: 155px 0 110px 0;
+    }
+    @include media-breakpoint-down(xl){
+        --#{$prefix}content-text-padding: 130px 0 160px 0;
+        --#{$prefix}content-text-2-padding: 160px 0;
+    }
+    @include media-breakpoint-down(lg){
+        --#{$prefix}content-text-padding: 222px 0 298px 0;
+    }
+    @include media-breakpoint-down(md){
+        --#{$prefix}content-text-padding: 222px 0 298px 0;
+        --#{$prefix}content-text-2-padding: 160px 0 200px 0;
+    }
+    @include media-breakpoint-down(sm){
+        --#{$prefix}content-text-padding: 210px 0 250px 0;
+    }    
+}
+@media screen and (min-width: 1400px) and (max-width: 1610px){
+    .content-text{        
+        --#{$prefix}content-text-padding: 160px 0 140px 0;
+        --#{$prefix}content-text-2-padding: 160px 0 150px 0;
+    }
+}
+.hero-inner-text{
+    --#{$prefix}hero-inner-text-padding: 130px 0 100px 0;
+    padding: var(--#{$prefix}hero-inner-text-padding);
+    @include media-breakpoint-down(xxl){
+        --#{$prefix}hero-inner-text-padding: 68px 0 0 0;
+    }    
+    @include media-breakpoint-down(lg){
+        --#{$prefix}hero-inner-text-padding: 100px 0 40px 0;
+    }
+    @include media-breakpoint-down(md){
+        --#{$prefix}hero-inner-text-padding: 60px 0 50px 0;
+    }   
+}
+.hero-1{   
+    .hero-heading{
+        --#{$prefix}heading-color: var(--#{$prefix}white);
+    }   
+}
+.hero-2{   
+    --#{$prefix}content-text-width: 1040px;
+    --#{$prefix}content-text-spacing: -190px;      
+    .carousel-captions::before{
+        display: none;
+    }    
+    .content-text{
+        max-width: var(--#{$prefix}content-text-width);
+        position: relative;
+        left: var(--#{$prefix}content-text-spacing);
+    }
+    @include media-breakpoint-down(xxl){
+        --#{$prefix}content-text-spacing: 0;      
+    }
+    @include media-breakpoint-down(md){
+        --#{$prefix}content-text-width: 100%;      
+    }
+}
+.hero-heading-fs{
+    --#{$prefix}hero-heading-fs: 100px;
+    font-size: var(--#{$prefix}hero-heading-fs);
+    @include media-breakpoint-down(md){
+        --#{$prefix}hero-heading-fs: 55px;
+    }
+    @include media-breakpoint-down(sm){
+        --#{$prefix}hero-heading-fs: 45px;
+    }
+}
+
+@media screen and (min-width: 1500.1px) and (max-width: 1750px){    
+    .hero-2{   
+        --#{$prefix}content-text-spacing: -80px; 
+        --#{$prefix}content-text-width: 884px;
+    }
+    .hero-heading-fs{
+        --#{$prefix}hero-heading-fs: 85px;
+    }
+}
+@media screen and (min-width: 1400.1px) and (max-width: 1500px){    
+    .hero-2{   
+        --#{$prefix}content-text-spacing: -13px; 
+        --#{$prefix}content-text-width: 840px;
+    }
+    .hero-heading-fs{
+        --#{$prefix}hero-heading-fs: 80px;
+    }
+}
+@media screen and (min-width: 1200.1px) and (max-width: 1400px){
+    .hero-2{    
+        --#{$prefix}content-text-width: 725px;
+    }
+    .hero-heading-fs{
+        --#{$prefix}hero-heading-fs: 70px;
+    }
+}
+@media screen and (min-width: 992px) and (max-width: 1200px){
+    .hero-2{    
+        --#{$prefix}content-text-width: 665px;
+    }
+    .hero-heading-fs{
+        --#{$prefix}hero-heading-fs: 65px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 991.9px){
+    .hero-2{    
+        --#{$prefix}content-text-width: 665px;
+    }
+    .hero-heading-fs{
+        --#{$prefix}hero-heading-fs: 65px;
+    }
+}

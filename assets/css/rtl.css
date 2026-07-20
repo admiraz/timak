@@ -1,0 +1,112 @@
+/* TIMAK RTL support — everything here is scoped under [dir="rtl"] (set on <html> only
+   when Arabic is the active language by the i18n engine) so it has zero effect on the
+   LTR languages (EN, SQ, RU, ES, FR). This file loads after style.css so it can win
+   on specificity ties. The bundled Bootstrap build in style.css uses physical
+   left/right properties (not CSS logical properties), so utility classes do not
+   auto-flip with dir="rtl" — the overrides below mirror the specific ones actually
+   used across the site rather than reimplementing all of Bootstrap's RTL variant. */
+
+[dir="rtl"] {
+	direction: rtl;
+}
+
+[dir="rtl"] body {
+	text-align: right;
+}
+
+/* Numbers, emails, phone numbers, model names and URLs must stay LTR and readable
+   even inside an RTL page. */
+[dir="rtl"] a[href^="tel:"],
+[dir="rtl"] a[href^="mailto:"],
+[dir="rtl"] a[href^="http"],
+[dir="rtl"] .timak-product-eyebrow,
+[dir="rtl"] .product-hero-title,
+[dir="rtl"] .product-version-title {
+	direction: ltr;
+	unicode-bidi: isolate;
+}
+[dir="rtl"] .footer-address a[href^="tel:"],
+[dir="rtl"] .footer-address ~ * a[href^="mailto:"] {
+	direction: ltr;
+	unicode-bidi: isolate;
+}
+
+/* ===== Generic alignment utilities actually used on the site ===== */
+[dir="rtl"] .text-start { text-align: right; }
+[dir="rtl"] .text-end { text-align: left; }
+[dir="rtl"] .text-sm-start { text-align: right; }
+[dir="rtl"] .text-lg-end { text-align: left; }
+
+/* ===== Logical-named spacing utilities that are physical (left/right) in this
+   bundled Bootstrap build, mirrored for the exact classes used on the site ===== */
+[dir="rtl"] .me-4 { margin-right: 0; margin-left: 1.5rem; }
+[dir="rtl"] .ms-0 { margin-left: 0; margin-right: 0; }
+[dir="rtl"] .start-0 { left: auto; right: 0; }
+[dir="rtl"] .end-0 { right: auto; left: 0; }
+@media (min-width: 992px) {
+	[dir="rtl"] .ms-lg-n30 { margin-left: 0; margin-right: -1.875rem; }
+}
+@media (min-width: 1200px) {
+	[dir="rtl"] .ms-xl-0 { margin-left: 0; margin-right: 0; }
+}
+@media (min-width: 1400px) {
+	[dir="rtl"] .ms-xxl-0 { margin-left: 0; margin-right: 0; }
+}
+
+/* ===== Dropdowns (nav Products/Company/language menus) ===== */
+[dir="rtl"] .dropdown-menu {
+	text-align: right;
+}
+[dir="rtl"] .dropdown-menu[data-bs-popper] {
+	left: auto;
+	right: 0;
+}
+
+/* ===== Directional icons — arrows should point toward reading-start in RTL ===== */
+[dir="rtl"] .btn svg[viewBox="0 0 35 22"],
+[dir="rtl"] .next-btn svg,
+[dir="rtl"] .prev-btn svg,
+[dir="rtl"] svg.arrow,
+[dir="rtl"] svg.arrow-reverse {
+	transform: scaleX(-1);
+}
+
+/* ===== Forms ===== */
+[dir="rtl"] .form-control,
+[dir="rtl"] textarea.form-control,
+[dir="rtl"] select.form-select {
+	text-align: right;
+}
+
+/* ===== Category jump-nav / progress indicator (products.html) ===== */
+[dir="rtl"] .category-jumpnav ul {
+	padding-right: 0;
+}
+[dir="rtl"] .products-progress-fill {
+	right: 0;
+	left: auto;
+}
+
+/* ===== Footer columns already reflow correctly via Bootstrap's row/col flex order
+   under dir="rtl" (native browser behavior); only the icon-in-text bits need help. */
+[dir="rtl"] .footer-address,
+[dir="rtl"] .d-flex.flex-column.mb-30 p {
+	text-align: right;
+}
+
+/* ===== Mobile offcanvas menu: mirror it to open from the left (the RTL "start"
+   edge) instead of the right. Bootstrap's .offcanvas-end is hardcoded to the right
+   edge (right:0; transform:translateX(100%)) since this build uses physical
+   properties; re-anchor it to the left and reverse the slide-in transform so it
+   still resolves to translateX(0) (via the existing .show/.showing rule) when open. */
+[dir="rtl"] .offcanvas.offcanvas-end {
+	right: auto;
+	left: 0;
+	border-left: 0;
+	border-right: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
+	transform: translateX(-100%);
+}
+[dir="rtl"] .offcanvas.offcanvas-end.showing,
+[dir="rtl"] .offcanvas.offcanvas-end.show:not(.hiding) {
+	transform: none;
+}

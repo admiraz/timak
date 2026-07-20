@@ -1,0 +1,177 @@
+#heroSlider.carousel{
+    --#{$prefix}carousel-indicators-height: 100px;
+    --#{$prefix}carousel-indicators-width: 180px;
+}
+@media (max-width: 1400px){
+    #heroSlider.carousel{
+        --#{$prefix}carousel-indicators-height: 85px;
+        --#{$prefix}carousel-indicators-width: 160px;
+    }
+}
+@media (max-width: 768px){
+    #heroSlider.carousel{
+        --#{$prefix}carousel-indicators-height: 70px;
+        --#{$prefix}carousel-indicators-width: 120px;
+    }
+}
+@media (max-width: 575px){
+    #heroSlider.carousel{
+        --#{$prefix}carousel-indicators-height: 64px;
+        --#{$prefix}carousel-indicators-width: 45px;
+    }
+}
+.carousel-control-buttons{
+    height: var(--#{$prefix}carousel-indicators-height);
+    width: var(--#{$prefix}carousel-indicators-width);
+    .next-btn,.prev-btn{
+        height: 100%;
+    }
+    margin-right: 51px;
+    @include media-breakpoint-down(xxl){
+        margin-right: 47px;
+    }
+    @include media-breakpoint-down(xl){
+        margin-right: 31px;
+    }
+    @include media-breakpoint-down(lg){
+        margin-right: 1rem;
+    }
+    @include media-breakpoint-down(sm){
+        margin-right: 12px;
+    }
+}
+.carousel-indicators{
+    --#{$prefix}carousel-indicators-bg: var(--#{$prefix}secondary);   
+    --#{$prefix}indecators-description-color: var(--#{$prefix}white);
+    left: auto;  
+    right: 231px;  
+    padding: 0 35px;    
+    margin-bottom: 0;    
+    background: var(--#{$prefix}carousel-indicators-bg);
+    backdrop-filter: blur(11.5px); 
+    gap: 16px; 
+    align-items: center;
+    height: var(--#{$prefix}carousel-indicators-height);
+    z-index: 1;
+    [data-bs-target] {  
+      text-indent: 0;      
+      cursor: auto;
+    }
+    .indecators-description{
+        color : var(--#{$prefix}indecators-description-color);
+    }
+    .indecators-item{
+        --#{$prefix}stroke-rgb: var(--#{$prefix}primary-rgb);
+        --#{$prefix}stroke-opacity: 1;
+        --#{$prefix}stroke-width: 2px;
+        -webkit-text-stroke: var(--#{$prefix}stroke-width) rgba(var(--#{$prefix}stroke-rgb), var(--#{$prefix}stroke-opacity));
+        color: var(--#{$prefix}indecators-item-color, transparent);
+    }
+    .active{
+        --#{$prefix}indecators-item-color: var(--#{$prefix}primary);
+        .indecators-item{            
+            -webkit-text-stroke:0;
+        }        
+    }
+    @include media-breakpoint-down(xxl){
+        right: 208px;
+        padding: 0 20px;
+    }
+    @include media-breakpoint-down(xl){
+        --#{$prefix}carousel-indicator-width : fit-content;        
+        padding: 0 20px 0 30px;     
+        right: 192px;           
+        .indecators-description{
+            display: none;
+        }
+        .active{
+            max-width: 240px;
+            .indecators-description{
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }       
+        }
+    }
+    @include media-breakpoint-down(lg){
+        right: 176px;          
+    }
+}
+.bottom-padding{
+    @include media-breakpoint-down(xl){
+        padding-bottom: 3px;
+    }
+    @include media-breakpoint-down(sm){
+        padding-bottom: 2px;
+    }
+}
+@media (max-width: 350px){    
+    .bottom-padding{
+        padding-bottom: 0;
+    }
+}
+@media (max-width: 450px){
+    .carousel-indicators{
+        .indecators-description{
+            font-size: 10px !important;
+        }
+    }
+}
+@media (max-width: 575px){
+    .carousel-indicators{
+        gap: 20px;
+        left: 12px;
+        right: 57px;    
+        .indecators-description{
+            font-size: 14px;
+        }    
+        .active{
+            max-width: 200px;                   
+        }
+    }
+}
+@media screen and (min-width: 575.1px) and (max-width: 768px) {
+    .carousel-indicators{         
+        right: 136px;  
+        padding: 0 18px;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1320px) {
+    .carousel-control-buttons{
+        margin-right: 30px; 
+    }
+    .carousel-indicators{
+        right: 190px;
+    }
+}
+@media screen and (min-width: 1400px) and (max-width: 1610px){
+    .carousel-control-buttons{
+        margin-right: 42.5px; 
+    }
+    .carousel-indicators{
+        right: 223px;
+    }
+}
+#heroSlider .carousel-item{        
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.carousel-captions{
+     position: relative;
+     &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(var(--#{$prefix}secondary-rgb), .2);
+     }
+}

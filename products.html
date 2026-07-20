@@ -1,0 +1,1086 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+        <meta name="theme-color"  content="#0e2a52">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Explore TIMAK's full range of specialized vehicles: ambulances, firefighting vehicles, mobile health vehicles, law enforcement vehicles, defence vehicles, pile drivers, customized vehicles, and superstructures. Engineered in Albania, trusted worldwide." data-i18n-content="seo.products.description">
+		<title data-i18n-doctitle="seo.products.title">Products | Specialized Vehicles by TIMAK</title>
+		<link rel="shortcut icon" type="images/png" href="assets/images/fav-icon/favicon.ico">
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+		<link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+		<link rel="stylesheet" href="assets/css/odometer.css">
+		<link rel="stylesheet" href="assets/css/animate.css">
+		<link rel="stylesheet" href="assets/css/magnific-popup.css">
+		<link rel="stylesheet" href="assets/css/style.css">
+		<link rel="stylesheet" href="assets/css/rtl.css">
+
+		<style>
+			.timak-logo-header{ height:38px; width:auto; display:block; }
+			.timak-logo-footer{ height:34px; width:auto; display:block; }
+			@media (min-width: 1200px){ .timak-logo-header{ height:44px; } }
+			.lang-dropdown .dropdown-menu{ min-width:6rem; }
+			.category-jumpnav{ position:sticky; top:0; z-index:50; background:var(--bs-body-bg,#fff); border-bottom:1px solid rgba(0,0,0,.08); }
+			.category-jumpnav ul{ list-style:none; display:flex; flex-wrap:wrap; gap:8px 4px; margin:0; padding:14px 0; overflow-x:auto; }
+			.category-jumpnav a{ display:inline-block; padding:8px 16px; border-radius:40px; font-weight:600; font-size:.85rem; text-decoration:none; white-space:nowrap; border:1px solid rgba(0,0,0,.12); color:inherit; transition:background-color .2s ease, color .2s ease, border-color .2s ease; }
+			.category-jumpnav a:hover{ background:var(--bs-primary); color:#fff; border-color:var(--bs-primary); }
+			.category-jumpnav a.is-current{ background:var(--bs-primary); color:#fff; border-color:var(--bs-primary); }
+			.timak-product-eyebrow{ font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--bs-primary); display:block; margin-bottom:10px; }
+
+			/* Large single-product hero slide — clean transparent cutout, no colored box */
+			.product-hero-image{ height:300px; display:flex; align-items:center; justify-content:center; padding:12px; }
+			.product-hero-image img{ max-height:100%; max-width:100%; width:auto; object-fit:contain; }
+			@media (min-width:992px){ .product-hero-image{ height:400px; } }
+			.product-hero-title{ font-size:clamp(1.75rem, 3vw, 2.75rem); margin-bottom:16px; }
+			.product-hero-desc{ font-size:1.1rem; line-height:1.6; max-width:560px; margin-bottom:20px; }
+			.product-hero-details{ display:flex; flex-wrap:wrap; gap:10px 24px; margin-bottom:28px; padding:16px 0; border-top:1px solid rgba(0,0,0,.08); border-bottom:1px solid rgba(0,0,0,.08); }
+			.product-hero-details span{ font-size:.85rem; font-weight:600; color:var(--bs-secondary); }
+			.product-hero-details span b{ color:var(--bs-primary); font-weight:700; }
+
+			/* Product Versions strip */
+			.product-versions-section{ margin-top:48px; padding-top:40px; border-top:1px solid rgba(0,0,0,.08); }
+			.product-versions-heading{ font-size:1.1rem; font-weight:700; margin-bottom:20px; }
+			.product-versions-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+			@media (min-width:576px){ .product-versions-grid{ grid-template-columns:repeat(3,1fr); } }
+			@media (min-width:768px){ .product-versions-grid{ grid-template-columns:repeat(4,1fr); } }
+			@media (min-width:1200px){ .product-versions-grid{ grid-template-columns:repeat(6,1fr); } }
+			.product-version-tile{ background:none; border:1px solid transparent; border-radius:12px; padding:10px; display:flex; flex-direction:column; align-items:center; gap:10px; cursor:pointer; transition:border-color .2s ease, background-color .2s ease; }
+			.product-version-tile:hover{ background:rgba(0,0,0,.03); }
+			.product-version-tile.is-active{ border-color:var(--bs-primary); background:rgba(0,0,0,.03); }
+			.product-version-photo{ width:100%; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; }
+			.product-version-photo img{ max-width:100%; max-height:100%; object-fit:contain; }
+			.product-version-title{ font-size:.8rem; font-weight:600; text-align:center; line-height:1.3; color:var(--bs-secondary); }
+			.product-version-tile.is-active .product-version-title{ color:var(--bs-primary); }
+
+			/* Products scroll stage (desktop pinned mode) */
+			.products-stage-pinned{ display:grid; overflow:hidden; }
+			.products-stage-pinned > .product-slide{ grid-area:1/1; height:100%; overflow:hidden; pointer-events:none; }
+			.products-stage-pinned > .product-slide.is-active{ pointer-events:auto; }
+			.products-stage-pinned .product-slide-content{ will-change:transform; }
+			.products-progress{ display:flex; align-items:center; gap:10px; }
+			.products-progress-track{ position:relative; width:120px; height:3px; background:rgba(0,0,0,.1); border-radius:2px; overflow:hidden; }
+			.products-progress-fill{ position:absolute; top:0; left:0; height:100%; width:0%; background:var(--bs-primary); border-radius:2px; transition:width .15s linear; }
+			.products-progress-label{ font-size:.85rem; font-weight:700; color:var(--bs-secondary); white-space:nowrap; }
+
+			/* Products flat list (tablet/mobile/reduced-motion mode) */
+			.products-stage-flat{ display:flex; flex-direction:column; gap:64px; }
+			.products-stage-flat .product-slide:not(:last-child){ padding-bottom:64px; border-bottom:1px solid rgba(0,0,0,.08); }
+		</style>
+
+	</head>
+
+
+
+	<body>
+		<div class="page">
+
+			<div class="w-100 h-100 position-fixed top-0 start-0 page-lines">
+				<div class="container position-relative h-100">
+					<span class="page-line-start position-absolute h-100"></span>
+					<span class="page-line-end position-absolute h-100"></span>
+				</div>
+			</div>
+
+			<!--Header Section ======================-->
+			<header class="section-header header-1 industria-nav sticky-navbar header-bg-1">
+				<nav class="navbar navbar-expand-xxl navbar-light nav-border hover-menu">
+					<div class="container">
+						<div class="d-flex align-items-center justify-content-between d-xxl-none">
+							<a href="index.html" class="navbar-brand logo">
+								<img src="assets/images/timak-logo-horizontal.svg" class="timak-logo-header" alt="TIMAK - Specialized Vehicle Manufacturer">
+							</a>
+							<a href="#" class="toggler-icon text-decoration-none d-block" data-bs-toggle="offcanvas" data-bs-target="#industriaNavbar" aria-controls="industriaNavbar" aria-label="Toggle navigation">
+								<svg width="40" height="23" viewBox="0 0 40 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<line x1="1.5" y1="1.5" x2="38.5" y2="1.5" stroke="#253B2F" stroke-width="3" stroke-linecap="round"/>
+									<line x1="1.5" y1="11.5" x2="38.5" y2="11.5" stroke="#253B2F" stroke-width="3" stroke-linecap="round"/>
+									<line x1="21.5" y1="21.5" x2="38.5" y2="21.5" stroke="#253B2F" stroke-width="3" stroke-linecap="round"/>
+								</svg>
+							</a>
+						</div>
+						<div class="collapse navbar-collapse">
+							<div class="d-flex align-items-center justify-content-between flex-grow-1">
+								<a href="index.html" class="navbar-brand logo d-none d-xxl-flex align-items-center me-4" style="margin-right:56px;">
+									<img src="assets/images/timak-logo-horizontal.svg" class="timak-logo-header" alt="TIMAK - Specialized Vehicle Manufacturer">
+								</a>
+								<ul class="navbar-nav flex-grow-1 align-items-xl-center justify-content-xl-between gap-3">
+									<li class="nav-item">
+										<a class="nav-link" href="index.html" aria-label="nav-links" data-i18n="nav.home">Home</a>
+									</li>
+									<li class="nav-item dropdown">
+										<a class="nav-link d-flex gap-2 align-items-center active" aria-current="page" href="products.html" aria-label="nav-links" data-bs-toggle="dropdown-hover" aria-expanded="false"><span data-i18n="nav.products">Products</span><span class="dropdown-icon">
+												<svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M11 8L6 2L1 8"/>
+												</svg>
+											</span>
+										</a>
+										<div class="dropdown-menu dropdown-menu-lg">
+											<div class="row">
+												<div class="col-lg-6">
+													<div class="d-flex flex-column">
+														<a class="dropdown-item" href="products.html#ambulances" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.ambulances">Ambulances</span></a>
+														<a class="dropdown-item" href="products.html#firefighting-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.firefighting">Firefighting Vehicles</span></a>
+														<a class="dropdown-item" href="products.html#mobile-health-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.mobileHealth">Mobile Health Vehicles</span></a>
+														<a class="dropdown-item" href="products.html#law-enforcement-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.lawEnforcement">Law Enforcement Vehicles</span></a>
+													</div>
+												</div>
+												<div class="col-lg-6">
+													<div class="d-flex flex-column dropdown-items-separator separator">
+														<a class="dropdown-item" href="products.html#defence-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.defence">Defence Vehicles</span></a>
+														<a class="dropdown-item" href="products.html#pile-drivers" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.pileDrivers">Pile Drivers</span></a>
+														<a class="dropdown-item" href="products.html#customized-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.customized">Customized Vehicles</span></a>
+														<a class="dropdown-item" href="products.html#superstructures" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.superstructures">SuperStructures</span></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="after-sales-services.html" aria-label="nav-links" data-i18n="nav.afterSales">After Sales Services</a>
+									</li>
+									<li class="nav-item dropdown ">
+                                        <a class="nav-link d-flex gap-2 align-items-center" href="#" aria-label="nav-links" data-bs-toggle="dropdown" aria-expanded="false"><span data-i18n="nav.company">Company</span><span class="dropdown-icon">
+                                                <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M11 8L6 2L1 8"/>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="about-us.html" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.company.aboutUs">About Us</span></a></li>
+                                            <li><a class="dropdown-item" href="team.html" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.company.team">Meet Our Team</span></a></li>
+                                            <li><a class="dropdown-item" href="career.html" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.company.career">Career</span></a></li>
+                                            <li><a class="dropdown-item" href="international-offices.html" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.company.offices">International Offices</span></a></li>
+                                        </ul>
+                                    </li>
+									<li class="nav-item">
+										<a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact Us</a>
+									</li>
+									<li class="nav-item dropdown lang-dropdown">
+										<a class="nav-link d-flex gap-2 align-items-center" href="#" aria-label="language switcher" data-bs-toggle="dropdown" aria-expanded="false">
+											EN
+											<span class="dropdown-icon">
+												<svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path d="M11 8L6 2L1 8"/>
+												</svg>
+											</span>
+										</a>
+										<ul class="dropdown-menu" data-lang-switcher>
+											<li><a class="dropdown-item active" href="#" data-lang="en">EN</a></li>
+											<li><a class="dropdown-item" href="#" data-lang="sq">SQ</a></li>
+											<li><a class="dropdown-item" href="#" data-lang="ru">RU</a></li>
+											<li><a class="dropdown-item" href="#" data-lang="es">ES</a></li>
+											<li><a class="dropdown-item" href="#" data-lang="fr">FR</a></li>
+											<li><a class="dropdown-item" href="#" data-lang="ar">AR</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- container-fluid -->
+				</nav>
+
+			</header>
+			<!--Header Section ======================-->
+
+
+			<!--Mobile-Header ======================-->
+			<nav class="industria-nav" aria-label="Offcanvas navbar large">
+				<div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="industriaNavbar" aria-labelledby="industriaNavbarLabel">
+					<div class="offcanvas-header">
+						<span class="offcanvas-title" id="industriaNavbarLabel">
+							<a href="index.html" class="navbar-brand logo">
+								<img src="assets/images/timak-logo-horizontal.svg" class="timak-logo-header" alt="TIMAK - Specialized Vehicle Manufacturer">
+							</a>
+						</span>
+						<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+					</div>
+					<div class="offcanvas-body justify-content-between section-full-width">
+						<ul class="navbar-nav flex-grow-1 align-items-xl-center gap-3 gap-xl-40 gap-xxl-50">
+							<li class="nav-item">
+								<a class="nav-link" href="index.html" aria-label="nav-links" data-i18n="nav.home">Home</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link d-flex gap-2 align-items-center active" aria-current="page" href="products.html" aria-label="nav-links" data-bs-toggle="dropdown-hover" aria-expanded="false"><span data-i18n="nav.products">Products</span><span class="dropdown-icon">
+										<svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M11 8L6 2L1 8"/>
+										</svg>
+									</span>
+								</a>
+								<div class="dropdown-menu dropdown-menu-lg">
+									<div class="row">
+										<div class="col-lg-6">
+											<div class="d-flex flex-column">
+												<a class="dropdown-item" href="products.html#ambulances" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.ambulances">Ambulances</span></a>
+												<a class="dropdown-item" href="products.html#firefighting-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.firefighting">Firefighting Vehicles</span></a>
+												<a class="dropdown-item" href="products.html#mobile-health-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.mobileHealth">Mobile Health Vehicles</span></a>
+												<a class="dropdown-item" href="products.html#law-enforcement-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.lawEnforcement">Law Enforcement Vehicles</span></a>
+											</div>
+										</div>
+										<div class="col-lg-6">
+											<div class="d-flex flex-column dropdown-items-separator separator">
+												<a class="dropdown-item" href="products.html#defence-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.defence">Defence Vehicles</span></a>
+												<a class="dropdown-item" href="products.html#pile-drivers" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.pileDrivers">Pile Drivers</span></a>
+												<a class="dropdown-item" href="products.html#customized-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.customized">Customized Vehicles</span></a>
+												<a class="dropdown-item" href="products.html#superstructures" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.superstructures">SuperStructures</span></a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="after-sales-services.html" aria-label="nav-links" data-i18n="nav.afterSales">After Sales Services</a>
+							</li>
+							<li class="nav-item dropdown ">
+								<a class="nav-link d-flex gap-2 align-items-center" href="#" aria-label="nav-links" data-bs-toggle="dropdown" aria-expanded="false"><span data-i18n="nav.company">Company</span><span class="dropdown-icon">
+										<svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M11 8L6 2L1 8"/>
+										</svg>
+									</span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="about-us.html" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.company.aboutUs">About Us</span></a></li>
+									<li><a class="dropdown-item" href="team.html" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.company.team">Meet Our Team</span></a></li>
+									<li><a class="dropdown-item" href="career.html" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.company.career">Career</span></a></li>
+									<li><a class="dropdown-item" href="international-offices.html" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.company.offices">International Offices</span></a></li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="contact.html" data-i18n="nav.contact">Contact Us</a>
+							</li>
+							<li class="nav-item dropdown lang-dropdown">
+								<a class="nav-link d-flex gap-2 align-items-center" href="#" aria-label="language switcher" data-bs-toggle="dropdown" aria-expanded="false">
+									EN
+									<span class="dropdown-icon">
+										<svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M11 8L6 2L1 8"/>
+										</svg>
+									</span>
+								</a>
+								<ul class="dropdown-menu" data-lang-switcher>
+									<li><a class="dropdown-item active" href="#" data-lang="en">EN</a></li>
+									<li><a class="dropdown-item" href="#" data-lang="sq">SQ</a></li>
+									<li><a class="dropdown-item" href="#" data-lang="ru">RU</a></li>
+									<li><a class="dropdown-item" href="#" data-lang="es">ES</a></li>
+									<li><a class="dropdown-item" href="#" data-lang="fr">FR</a></li>
+									<li><a class="dropdown-item" href="#" data-lang="ar">AR</a></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="d-flex align-items-center gap-40 gap-xxl-50 pt-30 pt-xl-0">
+							<div>
+								<a href="contact.html" class="btn btn-primary"><span data-i18n="common.getOffer">Get Offer</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<!--Mobile-Header ======================-->
+
+
+			<!--Banner Section ======================-->
+			<section class="section-banner position-relative pt-60">
+				<div class="section-full-width">
+					<div class="section-title-wrapper position-relative">
+						<div class="scroll-move">
+							<span class="scrolling-text display-1 fw-extra-bold stroke-title text-stroke stroke-width-2 stroke-opacity-20 stroke-color lh-1" data-i18n="products.banner.eyebrow">Products</span>
+						</div>
+						<div class="container">
+							<div class="section-title section-separator">
+								<h1 class="fw-extra-bold heading-title separator lh-1" data-i18n="products.banner.title">Specialized Vehicles, Engineered for Critical Missions</h1>
+								<div class="d-flex flex-column flex-lg-row gap-4 align-items-lg-end justify-content-lg-between">
+									<p class="fs-4 fw-semibold mb-0 subtitle subtitle-width" data-i18n="products.banner.subtitle">Ambulances, firefighting vehicles, mobile health units, law enforcement and defence vehicles, pile drivers, custom builds, and municipal superstructures — all designed and manufactured by TIMAK in Albania.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--Banner Section ======================-->
+
+			<!--Category Jump Nav ======================-->
+			<div class="category-jumpnav">
+				<div class="container">
+					<ul id="categoryJumpnavList">
+						<li><a href="#ambulances" data-category="ambulances" data-i18n="nav.products.ambulances">Ambulances</a></li>
+						<li><a href="#firefighting-vehicles" data-category="firefighting-vehicles" data-i18n="nav.products.firefighting">Firefighting Vehicles</a></li>
+						<li><a href="#mobile-health-vehicles" data-category="mobile-health-vehicles" data-i18n="nav.products.mobileHealth">Mobile Health Vehicles</a></li>
+						<li><a href="#law-enforcement-vehicles" data-category="law-enforcement-vehicles" data-i18n="nav.products.lawEnforcement">Law Enforcement Vehicles</a></li>
+						<li><a href="#defence-vehicles" data-category="defence-vehicles" data-i18n="nav.products.defence">Defence Vehicles</a></li>
+						<li><a href="#pile-drivers" data-category="pile-drivers" data-i18n="nav.products.pileDrivers">Pile Drivers</a></li>
+						<li><a href="#customized-vehicles" data-category="customized-vehicles" data-i18n="nav.products.customized">Customized Vehicles</a></li>
+						<li><a href="#superstructures" data-category="superstructures" data-i18n="nav.products.superstructures">SuperStructures</a></li>
+					</ul>
+				</div>
+			</div>
+			<!--Category Jump Nav ======================-->
+
+
+			<!--Products Stage ======================-->
+			<section class="products-stage-section pt-50 pt-lg-70">
+				<div class="container">
+					<div class="d-flex flex-column flex-sm-row align-items-sm-end justify-content-sm-between gap-3 mb-4">
+						<div>
+							<p class="mb-2 fw-bold text-primary text-uppercase" data-i18n="products.fullRange.eyebrow">Full Range</p>
+							<h2 class="fw-extra-bold heading-title mb-0" data-i18n="products.fullRange.title">Every TIMAK Vehicle & Superstructure</h2>
+						</div>
+						<div id="productsProgress" class="products-progress d-none"></div>
+					</div>
+					<div id="productsStage" class="products-stage"></div>
+				</div>
+			</section>
+			<!--Products Stage ======================-->
+
+
+			<!--Feedback Section (CTA) ======================-->
+			<section id="feedback" class="section-feedback feedback-1 pt-50 pt-lg-100 pt-xxl-120">
+				<div class="section-full-width">
+					<div class="feedback-wrapper feedback-bg-1 position-relative">
+						<div class="container">
+							<div class="feedback-content d-flex flex-column gap-40 flex-md-row align-items-md-center justify-content-md-between">
+								<div>
+									<h2 class="fw-extra-bold feedback-title display-4 mb-3" data-i18n="products.feedback.title">Don't See Exactly What You Need?</h2>
+									<p class="mb-0 fs-5" data-i18n="products.feedback.text">TIMAK builds fully custom vehicle and superstructure solutions. Tell us your requirements and we'll configure the right platform for your mission.</p>
+								</div>
+								<div class="industria-button d-flex flex-wrap gap-3">
+									<a href="contact.html#contactForm" class="btn btn-xl btn-white gap-10">
+										<span data-i18n="common.getOffer">Get Offer</span>
+										<svg class="arrow" width="35" height="22" viewBox="0 0 35 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 0.585815L34.4142 10.9999L24 21.4142L22.5858 20L30.5857 12L0 12L2.38419e-07 10L30.5858 10L22.5858 2.00003L24 0.585815Z"></path></svg>
+									</a>
+									<a href="assets/documents/timak-general-catalogue.pdf" target="_blank" rel="noopener" class="btn btn-xl btn-outline-white gap-10" data-i18n="common.downloadCatalogue">Download Catalogue</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--Feedback Section ======================-->
+
+
+			<!--Footer Section ======================-->
+			<footer class="section-footer pt-5 pt-lg-100 pt-xxl-120 section-full-width position-relative">
+				<div class="container">
+					<div class="footer-contents">
+						<div class="row gy-5 gy-lg-0">
+							<div class="col-lg-3">
+								<div>
+									<a class="navbar-brand py-0" href="index.html">
+									<span class="logo"><img src="assets/images/timak-logo-horizontal.svg" class="timak-logo-footer" alt="TIMAK logo"></span>
+									</a>
+									<p class="py-10 py-lg-3 mb-0 fw-semibold"><span data-i18n="footer.tagline">Specialized Vehicles for Critical Missions</span></p>
+									<ul class="contact-lists list-unstyled mb-0 d-flex">
+										<li><a href="https://www.facebook.com/timakalbania" target="_blank" rel="noopener" class="link-hover-animation-1 text-decoration-none text-uppercase">fb</a></li>
+										<li><a href="https://www.instagram.com/timakofficial/" target="_blank" rel="noopener" class="link-hover-animation-1 text-decoration-none text-uppercase">ig</a></li>
+										<li><a href="https://www.youtube.com/channel/UCKZ67lQ3aa48U2AndTVSTgg" target="_blank" rel="noopener" class="link-hover-animation-1 text-decoration-none text-uppercase">yt</a></li>
+										<li><a href="https://www.linkedin.com/company/timak/" target="_blank" rel="noopener" class="link-hover-animation-1 text-decoration-none text-uppercase">li</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-3 col-xxl-2">
+								<div class="address-details">
+									<h5 class="fw-extra-bold separator"><span data-i18n="footer.pages">Pages</span></h5>
+									<ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+										<li><a href="about-us.html" class="text-decoration-none link-hover-animation-1" data-i18n="footer.pages.aboutUs">About Us</a></li>
+										<li><a href="team.html" class="text-decoration-none link-hover-animation-1" data-i18n="footer.pages.team">Meet Our Team</a></li>
+										<li><a href="career.html" class="text-decoration-none link-hover-animation-1" data-i18n="footer.pages.career">Career</a></li>
+										<li><a href="after-sales-services.html" class="text-decoration-none link-hover-animation-1" data-i18n="footer.pages.afterSales">After Sales Services</a></li>
+										<li><a href="international-offices.html" class="text-decoration-none link-hover-animation-1" data-i18n="footer.pages.offices">International Offices</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-3 col-xxl-3">
+								<div class="address-details">
+									<h5 class="fw-extra-bold separator"><span data-i18n="footer.products">Products</span></h5>
+									<ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+										<li><a href="products.html#ambulances" class="text-decoration-none link-hover-animation-1" data-i18n="footer.products.ambulances">Ambulances</a></li>
+										<li><a href="products.html#firefighting-vehicles" class="text-decoration-none link-hover-animation-1" data-i18n="footer.products.fireTrucks">Fire Trucks</a></li>
+										<li><a href="products.html#mobile-health-vehicles" class="text-decoration-none link-hover-animation-1" data-i18n="footer.products.mobileHealth">Mobile Health Vehicles</a></li>
+										<li><a href="products.html#defence-vehicles" class="text-decoration-none link-hover-animation-1" data-i18n="footer.products.defenseVehicles">Defense Vehicles</a></li>
+										<li><a href="products.html#law-enforcement-vehicles" class="text-decoration-none link-hover-animation-1" data-i18n="footer.products.lawEnforcement">Law Enforcement Vehicles</a></li>
+										<li><a href="products.html#pile-drivers" class="text-decoration-none link-hover-animation-1" data-i18n="footer.products.pileDrivers">Pile Drivers</a></li>
+										<li><a href="products.html#customized-vehicles" class="text-decoration-none link-hover-animation-1" data-i18n="footer.products.customized">Customized Vehicles</a></li>
+										<li><a href="products.html#superstructures" class="text-decoration-none link-hover-animation-1" data-i18n="footer.products.superstructures">Superstructures</a></li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-lg-3 col-xxl-4">
+								<div class="address-details">
+									<h5 class="fw-extra-bold separator"><span data-i18n="footer.contact">Contact</span></h5>
+									<div class="footer-address">
+										<p class="fw-semibold mb-0"><span data-i18n="footer.companyName">TIMAK Special Vehicles</span></p>
+										<p><span data-i18n="footer.address">Tirana Industrial Park, Nr. 37, Tirana, Albania</span></p>
+									</div>
+									<div class="d-flex flex-column mb-30">
+										<p class="mb-0 d-flex align-items-center gap-2"><span data-i18n="footer.phoneLabel">Phone:</span> <a href="tel:+355692056663" class="text-decoration-none link-hover-animation-1">+355 69 205 6663</a></p>
+										<p class="mb-0 d-flex align-items-center gap-2"><span data-i18n="footer.emailLabel">Email:</span> <a href="mailto:info@timak.com" class="text-decoration-none link-hover-animation-1">info@timak.com</a></p>
+									</div>
+									<h5 class="fw-extra-bold separator"><span data-i18n="footer.subscribe">Subscribe</span></h5>
+									<form action="#" class="d-flex gap-2">
+										<input type="email" class="form-control" placeholder="Your email address" aria-label="Subscribe to TIMAK newsletter" data-i18n-placeholder="footer.emailPlaceholder" required>
+										<button type="submit" class="btn btn-primary"><span data-i18n="common.submit">Submit</span></button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="copyright d-flex flex-column gap-2 flex-lg-row justify-content-lg-between align-items-lg-center text-center text-sm-start">
+						<p class="mb-0">&copy; <span class="dynamic-year"></span> <span data-i18n="footer.copyright">TIMAK, All Rights Reserved</span></p>
+						<p class="mb-0"><span data-i18n="footer.bottomTagline">Specialized Vehicle Manufacturer — Made in Albania, Trusted Worldwide</span></p>
+					</div>
+				</div>
+			</footer>
+			<!--Footer Section ======================-->
+
+			<!--Back-to-top ======================-->
+			<div class="progressCounter progressScroll progress-scroll-opacity-0">
+				<div class="progressScroll-border">
+				  <div class="progressScroll-circle">
+					<span class="progressScroll-text text-white">
+						<svg width="24" height="24" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.1758 41.7882C11.4955 41.1079 11.4388 40.0401 12.0057 39.2953L12.1758 39.1007L39.0508 12.2256C39.7929 11.4835 40.9962 11.4835 41.7383 12.2256C42.4186 12.9059 42.4753 13.9737 41.9084 14.7185L41.7383 14.9131L14.8633 41.7882C14.1211 42.5303 12.9179 42.5303 12.1758 41.7882Z"/><path d="M18.7659 15.5153C17.7163 15.5175 16.8637 14.6685 16.8614 13.619C16.8594 12.6649 17.5608 11.8735 18.4769 11.7358L18.7577 11.7146L40.3903 11.668C41.3473 11.6659 42.14 12.3714 42.2746 13.2906L42.2947 13.5723L42.25 35.2067C42.2478 36.2562 41.3952 37.1052 40.3457 37.1031C39.3916 37.1011 38.6031 36.3963 38.4693 35.4797L38.4493 35.1988L38.489 15.4727L18.7659 15.5153Z"/></svg>
+					</span>
+					</div>
+				</div>
+			</div>
+			<!--Back-to-top ======================-->
+
+		</div>
+		<!-- pages -->
+
+			<script src="assets/js/jquery-3.7.0.min.js"></script>
+			<script src="assets/js/lenis.min.js"></script>
+			<script src="assets/js/bootstrap.bundle.min.js"></script>
+			<script src="assets/js/swiper-bundle.min.js"></script>
+			<script src="assets/js/jquery.magnific-popup.min.js"></script>
+			<script src="assets/js/anime.min.js"></script>
+			<script src="assets/js/animate.js"></script>
+			<script src="assets/js/wow.min.js"></script>
+			<script src="assets/js/odometer.js"></script>
+			<script src="assets/js/jquery.progressScroll.min.js"></script>
+			<script src="assets/js/gsap.min.js"></script>
+			<script src="assets/js/scrollTrigger.min.js"></script>
+			<script src="assets/js/script.js"></script>
+			<script src="assets/js/i18n/i18n-data-shared.js"></script>
+			<script src="assets/js/i18n/i18n-data-products.js"></script>
+			<script src="assets/js/i18n/i18n-engine.js"></script>
+			<script>
+			(function () {
+				document.addEventListener('DOMContentLoaded', function () {
+					var stage = document.getElementById('productsStage');
+					if (!stage) return;
+
+					// leaflet: real "PRODUCT LEAFLET" PDF sourced from each product's page on timak.com, downloaded
+					// into assets/documents/leaflets/. null means the source site has no leaflet for that exact
+					// product/version (its own PRODUCT LEAFLET button on timak.com has no href either) — the
+					// button is hidden for those rather than pointing at a generic or unrelated file.
+					var products = [
+						{ img: 'assets/images/products/ambulance-emergency.png', title: 'Emergency Ambulance', category: 'ambulances', desc: 'A custom-designed emergency ambulance built for rapid-response civilian and international emergency care standards, combining safety, precision, and performance for critical care on the move.', leaflet: 'assets/documents/leaflets/emergency-ambulance.pdf' },
+						{ img: 'assets/images/products/ambulance-armored.png', title: 'Armored Ambulance', category: 'ambulances', desc: 'A protected ambulance platform engineered for military and high-risk operational environments, delivering life-saving care without compromising crew safety.', leaflet: 'assets/documents/leaflets/armored-ambulance.pdf' },
+						{ img: 'assets/images/products/ambulance-box.png', title: 'Box Ambulance', category: 'ambulances', desc: 'A boxed-body ambulance configuration offering expanded interior space for patient care equipment and crew mobility during transport.', leaflet: 'assets/documents/leaflets/box-ambulance.pdf' },
+						{ img: 'assets/images/products/ambulance-boat.png', title: 'Boat Ambulance', category: 'ambulances', desc: 'A high-speed boat ambulance built for water-based emergency response and patient transport across lakes, rivers, and coastal areas.', leaflet: 'assets/documents/leaflets/boat-ambulance.pdf' },
+						{ img: 'assets/images/products/ambulance-military.png', title: 'Military Ambulance', category: 'ambulances', desc: 'A military-grade ambulance configured for field medical support in defence and tactical operational environments.', leaflet: 'assets/documents/leaflets/military-ambulance.pdf' },
+						{ img: 'assets/images/products/ambulance-minivan.png', title: 'Minivan Ambulance', category: 'ambulances', desc: 'A compact minivan ambulance platform suited for urban emergency response and everyday patient transport.', leaflet: 'assets/documents/leaflets/minivan-ambulance.pdf' },
+						{ img: 'assets/images/products/ambulance-motor.png', title: 'Motor Ambulance', category: 'ambulances', desc: 'A lightweight motorized ambulance unit built for fast, agile emergency response in dense or hard-to-reach areas.', leaflet: 'assets/documents/leaflets/motor-ambulance.pdf' },
+						{ img: 'assets/images/products/ambulance-neonatal.png', title: 'Neonatal Ambulance', category: 'ambulances', desc: 'A specialized ambulance equipped for the safe transport of newborns requiring critical neonatal care.', leaflet: 'assets/documents/leaflets/neonatal-ambulance.pdf' },
+						{ img: 'assets/images/products/ambulance-negative-pressure.png', title: 'Negative Pressure Ambulance', category: 'ambulances', desc: 'An isolation ambulance with negative pressure ventilation, designed for the safe transport of patients with infectious conditions.', leaflet: 'assets/documents/leaflets/negative-pressure-ambulance.pdf' },
+						{ img: 'assets/images/products/ambulance-suv-4x4.png', title: 'SUV 4x4 Ambulance', category: 'ambulances', desc: 'A 4x4 SUV ambulance platform built for emergency response across rugged and off-road terrain.', leaflet: 'assets/documents/leaflets/suv-4x4-ambulance.pdf' },
+						{ img: 'assets/images/products/firefighting-truck.png', title: 'Firefighting Truck', category: 'firefighting-vehicles', desc: 'A reliable structural firefighting truck engineered for fast response, water delivery, and crew safety in demanding urban and industrial fire scenarios.', leaflet: 'assets/documents/leaflets/firefighting-truck.pdf' },
+						{ img: 'assets/images/products/firefighting-tanker.png', title: 'Firefighting Support Tanker', category: 'firefighting-vehicles', desc: 'A high-capacity water tanker built to support firefighting crews with extended water supply during prolonged operations.', leaflet: 'assets/documents/leaflets/firefighting-support-tanker.pdf' },
+						{ img: 'assets/images/products/forest-fighting-vehicle.png', title: 'Forest Fighting Vehicle', category: 'firefighting-vehicles', desc: 'A specialized forest firefighting vehicle engineered for wildfire response in remote and difficult terrain.', leaflet: 'assets/documents/leaflets/forest-fighting-vehicle.pdf' },
+						{ img: 'assets/images/products/rapid-intervention-vehicle.png', title: 'Rapid Intervention Vehicle', category: 'firefighting-vehicles', desc: 'A fast, compact firefighting vehicle designed for rapid first-response to incidents ahead of larger fire apparatus.', leaflet: 'assets/documents/leaflets/rapid-intervention-vehicle.pdf' },
+						{ img: 'assets/images/products/rescue-vehicle.png', title: 'Rescue Vehicle', category: 'firefighting-vehicles', desc: 'A dedicated rescue vehicle equipped for technical rescue and emergency support operations.', leaflet: 'assets/documents/leaflets/rescue-vehicle.pdf' },
+						{ img: 'assets/images/products/mobile-clinic.png', title: 'Mobile Clinic Vehicle', category: 'mobile-health-vehicles', desc: 'A fully equipped mobile clinic bringing outpatient healthcare, consultations, and basic treatment directly to underserved and remote communities.', leaflet: 'assets/documents/leaflets/mobile-clinic-vehicle.pdf' },
+						{ img: 'assets/images/products/mobile-laboratory.png', title: 'Mobile Laboratory Vehicle', category: 'mobile-health-vehicles', desc: 'A mobile diagnostic laboratory engineered for field sample collection and testing, supporting outreach health programs and crisis response.', leaflet: 'assets/documents/leaflets/mobile-laboratory-vehicle.pdf' },
+						{ img: 'assets/images/products/blood-collection-vehicle.png', title: 'Blood Collection Vehicle', category: 'mobile-health-vehicles', desc: 'A mobile blood collection unit built to support donation drives and outreach programs away from fixed medical facilities.', leaflet: 'assets/documents/leaflets/blood-collection-vehicle.pdf' },
+						{ img: 'assets/images/products/clinic-container.png', title: 'Clinic Container', category: 'mobile-health-vehicles', desc: 'A containerized mobile clinic solution offering a relocatable healthcare space for field deployment.', leaflet: 'assets/documents/leaflets/clinic-container.pdf' },
+						{ img: 'assets/images/products/dental-clinic-vehicle.png', title: 'Dental Clinic Vehicle', category: 'mobile-health-vehicles', desc: "A mobile dental clinic equipped to deliver oral healthcare services directly to communities and institutions.", leaflet: 'assets/documents/leaflets/dental-clinic-vehicle.pdf' },
+						{ img: 'assets/images/products/mobile-gynecological-vehicle.png', title: 'Mobile Gynecological Vehicle', category: 'mobile-health-vehicles', desc: "A mobile gynecological unit built to extend women's health services to underserved and remote areas.", leaflet: 'assets/documents/leaflets/mobile-gynecological-vehicle.pdf' },
+						{ img: 'assets/images/products/mobile-xray-vehicle.png', title: 'Mobile X-ray Vehicle', category: 'mobile-health-vehicles', desc: 'A mobile diagnostic imaging unit equipped with X-ray capabilities for field and outreach healthcare operations.', leaflet: 'assets/documents/leaflets/mobile-xray-vehicle.pdf' },
+						{ img: 'assets/images/products/sahara-hospital-tent.png', title: 'Sahara Hospital Tent', category: 'mobile-health-vehicles', desc: 'A rapidly deployable field hospital tent system designed for emergency medical response and humanitarian operations.', leaflet: 'assets/documents/leaflets/sahara-hospital-tent.pdf' },
+						{ img: 'assets/images/products/vaccine-carrier.png', title: 'Vaccine Carrier', category: 'mobile-health-vehicles', desc: 'A temperature-controlled mobile unit built for the safe transport and distribution of vaccines in the field.', leaflet: 'assets/documents/leaflets/vaccine-carrier.pdf' },
+						{ img: 'assets/images/products/police-car.png', title: 'Police Car', category: 'law-enforcement-vehicles', desc: 'A patrol-ready police vehicle configured for daily law enforcement operations, secure communications, and rapid response.', leaflet: 'assets/documents/leaflets/police-car.pdf' },
+						{ img: 'assets/images/products/police-van.png', title: 'Police Van', category: 'law-enforcement-vehicles', desc: 'A secure police van designed for patrol, prisoner transport, and public safety operations requiring additional crew and equipment capacity.', leaflet: 'assets/documents/leaflets/police-van.pdf' },
+						{ img: 'assets/images/products/csi-vehicle.png', title: 'CSI Vehicle', category: 'law-enforcement-vehicles', desc: 'A crime scene investigation vehicle equipped for forensic evidence collection and on-site law enforcement support.', leaflet: 'assets/documents/leaflets/csi-vehicle.pdf' },
+						{ img: 'assets/images/products/k9-vehicle.png', title: 'K9 Vehicle', category: 'law-enforcement-vehicles', desc: 'A police K9 unit vehicle configured for the safe transport and operational deployment of canine teams.', leaflet: null },
+						{ img: 'assets/images/products/patrol-vehicle.png', title: 'Patrol Vehicle', category: 'law-enforcement-vehicles', desc: 'A patrol-configured vehicle built for daily law enforcement operations and rapid response coverage.', leaflet: 'assets/documents/leaflets/patrol-vehicle.pdf' },
+						{ img: 'assets/images/products/prisoner-van.png', title: 'Prisoner Van', category: 'law-enforcement-vehicles', desc: 'A secure prisoner transport van designed for the safe, controlled movement of detainees.', leaflet: 'assets/documents/leaflets/prisoner-van.pdf' },
+						{ img: 'assets/images/products/riot-control-vehicle.png', title: 'Riot Control Vehicle', category: 'law-enforcement-vehicles', desc: 'A protected riot control vehicle engineered to support law enforcement in crowd control and public order operations.', leaflet: 'assets/documents/leaflets/riot-control-vehicle.pdf' },
+						{ img: 'assets/images/products/shota-mrap.png', title: 'SHOTA MRAP', category: 'defence-vehicles', desc: "TIMAK's flagship armored mine-resistant platform, engineered for military, protection, and tactical applications in high-threat environments.", leaflet: 'assets/documents/leaflets/shota-mrap.pdf' },
+						{ img: 'assets/images/products/light-utility-suv.png', title: 'Light Utility SUV', category: 'defence-vehicles', desc: 'A rugged, mission-configurable utility SUV built for tactical mobility, personnel transport, and light defence operations.', leaflet: null },
+						{ img: 'assets/images/products/heavy-duty-tactical-vehicle.png', title: 'Heavy Duty Tactical Vehicle', category: 'defence-vehicles', desc: 'A heavy-duty tactical vehicle built for demanding defence and protection operations requiring extended payload and durability.', leaflet: null },
+						{ img: 'assets/images/products/light-tactical-pickup.png', title: 'Light Tactical Pickup', category: 'defence-vehicles', desc: 'A light tactical pickup platform configured for mobility and utility in defence and security operations.', leaflet: null },
+						{ img: 'assets/images/products/solar-pile-driver.png', title: 'Solar Pile Driver Machine', category: 'pile-drivers', desc: 'A precision pile-driving machine purpose-built for solar farm installation, engineered for speed and accuracy across large infrastructure sites.', leaflet: 'assets/documents/leaflets/solar-pile-driver-machine.pdf' },
+						{ img: 'assets/images/products/guardrail-pile-driver.png', title: 'Guard-rail Pile Driver Machine', category: 'pile-drivers', desc: 'A dedicated guard-rail installation machine built for road safety infrastructure projects, delivering consistent, efficient pile placement.', leaflet: 'assets/documents/leaflets/guardrail-pile-driver-machine.pdf' },
+						{ img: 'assets/images/products/drilling-machine.png', title: 'Drilling Machine', category: 'pile-drivers', desc: 'A heavy-duty drilling machine engineered for foundation and infrastructure works across demanding terrain conditions.', leaflet: 'assets/documents/leaflets/drilling-machine.pdf' },
+						{ img: 'assets/images/products/custom-box-truck.png', title: 'Mobile Customized Box', category: 'customized-vehicles', desc: 'A purpose-built mobile box vehicle configurable to unique commercial, institutional, or operational requirements.', leaflet: null },
+						{ img: 'assets/images/products/mobile-food-trailer.png', title: 'Mobile Food Trailer', category: 'customized-vehicles', desc: 'A fully equipped mobile food service trailer designed for commercial catering, events, and mobile retail operations.', leaflet: null },
+						{ img: 'assets/images/products/mobile-library.png', title: 'Mobile Library', category: 'customized-vehicles', desc: 'A custom-built mobile library bringing books, resources, and educational access directly to schools and communities.', leaflet: null },
+						{ img: 'assets/images/products/custom-glass-box.png', title: 'Custom Glass Box', category: 'customized-vehicles', desc: 'A custom glass-panel box vehicle configuration suited for mobile display, retail, and showcase applications.', leaflet: null },
+						{ img: 'assets/images/products/mobile-barber-shop.png', title: 'Mobile Barber Shop', category: 'customized-vehicles', desc: 'A fully equipped mobile barber shop built for on-the-go grooming services and mobile commercial operations.', leaflet: null },
+						{ img: 'assets/images/products/mobile-customized-van.png', title: 'Mobile Customized Van', category: 'customized-vehicles', desc: 'A configurable van platform tailored to unique commercial and institutional mobile service requirements.', leaflet: null },
+						{ img: 'assets/images/products/road-maintenance.png', title: 'Road Maintenance', category: 'superstructures', desc: 'A municipal superstructure engineered for everyday road maintenance operations, built for reliability in public service fleets.', leaflet: null },
+						{ img: 'assets/images/products/winter-maintenance.png', title: 'Winter Maintenance', category: 'superstructures', desc: 'A winter service superstructure equipped for snow clearing and road treatment, keeping public infrastructure operational in harsh conditions.', leaflet: null },
+						{ img: 'assets/images/products/summer-maintenance.png', title: 'Summer Maintenance', category: 'superstructures', desc: 'A summer maintenance superstructure built to support seasonal municipal road and public infrastructure upkeep.', leaflet: null },
+						{ img: 'assets/images/products/wastewater-management.png', title: 'Wastewater Management', category: 'superstructures', desc: 'A wastewater management superstructure engineered for municipal sanitation operations, delivering dependable everyday performance.', leaflet: null }
+					];
+
+					// Every version needs a complete, real data entry (not just an image+title) so the click
+					// handler below never has to fall back to hardcoded text for any product or version.
+					products.forEach(function (p, i) {
+						p.id = p.category + '-' + i;
+						p.configuration = 'Custom-built to order';
+						p.origin = 'Made in Albania';
+					});
+
+					var categoryLabels = {
+						'ambulances': 'Ambulances',
+						'firefighting-vehicles': 'Firefighting Vehicles',
+						'mobile-health-vehicles': 'Mobile Health Vehicles',
+						'law-enforcement-vehicles': 'Law Enforcement Vehicles',
+						'defence-vehicles': 'Defence Vehicles',
+						'pile-drivers': 'Pile Drivers',
+						'customized-vehicles': 'Customized Vehicles',
+						'superstructures': 'SuperStructures'
+					};
+					var categoryOrder = ['ambulances', 'firefighting-vehicles', 'mobile-health-vehicles', 'law-enforcement-vehicles', 'defence-vehicles', 'pile-drivers', 'customized-vehicles', 'superstructures'];
+
+					// Group the flat product list into one entry per category, each holding all of its versions/models
+					var categories = categoryOrder.map(function (slug) {
+						return { slug: slug, label: categoryLabels[slug], items: products.filter(function (p) { return p.category === slug; }) };
+					});
+
+					// i18n lookups. English text lives in `products`/`categoryLabels` above and is
+					// passed as the fallback, so translations only need to exist for the other five
+					// languages — nothing breaks if a key hasn't been translated yet.
+					var categoryI18nKey = {
+						'ambulances': 'ambulances',
+						'firefighting-vehicles': 'firefighting',
+						'mobile-health-vehicles': 'mobileHealth',
+						'law-enforcement-vehicles': 'lawEnforcement',
+						'defence-vehicles': 'defence',
+						'pile-drivers': 'pileDrivers',
+						'customized-vehicles': 'customized',
+						'superstructures': 'superstructures'
+					};
+					function slugify(s) {
+						return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+					}
+					function tCat(cat) {
+						var key = categoryI18nKey[cat.slug];
+						return (window.TIMAK_I18N_ENGINE && key) ? window.TIMAK_I18N_ENGINE.t('nav.products.' + key, cat.label) : cat.label;
+					}
+					function tItem(item, field) {
+						return window.TIMAK_I18N_ENGINE ? window.TIMAK_I18N_ENGINE.t('products.item.' + slugify(item.title) + '.' + field, item[field]) : item[field];
+					}
+					function tUI(key, fallback) {
+						return window.TIMAK_I18N_ENGINE ? window.TIMAK_I18N_ENGINE.t(key, fallback) : fallback;
+					}
+
+					var progressEl = document.getElementById('productsProgress');
+					var jumpLinks = document.querySelectorAll('#categoryJumpnavList a');
+					var currentMode = null; // 'pinned' | 'flat'
+					var activeTimeline = null;
+					var resizeTimer;
+					var scrollToCategoryImpl = null; // set by whichever mode is currently built; used by jump-nav pills and by the incoming-hash deep link
+					var STICKY_OFFSET = 120; // clears the sticky site header + sticky category jump-nav bar, used by both modes
+
+					function versionsHTML(cat) {
+						return '<div class="product-versions-section">' +
+							'<h4 class="product-versions-heading">' + tUI('products.availableVersions', 'Available Versions') + '</h4>' +
+							'<div class="product-versions-grid">' +
+							cat.items.map(function (item, i) {
+								var vTitle = tItem(item, 'title');
+								return '<button type="button" class="product-version-tile' + (i === 0 ? ' is-active' : '') + '" data-index="' + i + '" data-version-id="' + item.id + '">' +
+									'<span class="product-version-photo"><img src="' + item.img + '" alt="TIMAK ' + vTitle + '" loading="lazy"></span>' +
+									'<span class="product-version-title">' + vTitle + '</span>' +
+								'</button>';
+							}).join('') +
+							'</div>' +
+						'</div>';
+					}
+
+					function slideHTML(cat, extraClass) {
+						var main = cat.items[0];
+						var mainTitle = tItem(main, 'title');
+						var catLabel = tCat(cat);
+						return '<div class="product-slide' + (extraClass ? ' ' + extraClass : '') + '" id="' + cat.slug + '" data-category="' + cat.slug + '">' +
+							'<div class="product-slide-content">' +
+							'<div class="row align-items-center gy-4">' +
+								'<div class="col-lg-6">' +
+									'<div class="product-hero-image"><img src="' + main.img + '" alt="TIMAK ' + mainTitle + '" loading="lazy"></div>' +
+								'</div>' +
+								'<div class="col-lg-6">' +
+									'<span class="timak-product-eyebrow">' + catLabel + '</span>' +
+									'<h2 class="fw-extra-bold product-hero-title">' + mainTitle + '</h2>' +
+									'<p class="product-hero-desc mb-0">' + tItem(main, 'desc') + '</p>' +
+									'<div class="product-hero-details">' +
+										'<span>' + tUI('products.categoryLabel', 'Category:') + ' <b>' + catLabel + '</b></span>' +
+										'<span>' + tUI('products.configLabel', 'Configuration:') + ' <b>' + tUI('products.configValue', main.configuration) + '</b></span>' +
+										'<span>' + tUI('products.originLabel', 'Origin:') + ' <b>' + tUI('products.originValue', main.origin) + '</b></span>' +
+									'</div>' +
+									'<div class="d-flex flex-wrap gap-3 product-hero-actions">' +
+										'<a href="contact.html?product=' + encodeURIComponent(mainTitle) + '#contactForm" class="btn btn-lg btn-primary">' + tUI('common.getOffer', 'Get Offer') + '</a>' +
+										'<a href="' + (main.leaflet || '#') + '"' + (main.leaflet ? ' target="_blank" rel="noopener"' : ' aria-disabled="true" tabindex="-1"') + ' class="btn btn-lg btn-outline-secondary product-leaflet-link' + (main.leaflet ? '' : ' d-none') + '">' + tUI('products.leafletButton', 'PRODUCT LEAFLET') + '</a>' +
+									'</div>' +
+								'</div>' +
+							'</div>' +
+							versionsHTML(cat) +
+							'</div>' +
+						'</div>';
+					}
+
+					// Apply one version's full data set to the featured-product area of ONE specific slide.
+					// `slide` is always resolved by the caller from the actual clicked element's DOM ancestry
+					// (never a cached/global reference), so this is safe to call for any category at any time.
+					function applyVersionToSlide(slide, cat, item, animate) {
+						if (!slide || !cat || !item) return;
+						var heroImgBlock = slide.querySelector('.product-hero-image');
+						var img = slide.querySelector('.product-hero-image img');
+						var eyebrow = slide.querySelector('.timak-product-eyebrow');
+						var title = slide.querySelector('.product-hero-title');
+						var desc = slide.querySelector('.product-hero-desc');
+						var detailsEl = slide.querySelector('.product-hero-details');
+						var offerLink = slide.querySelector('.product-hero-actions a.btn-primary');
+						var leafletLink = slide.querySelector('.product-hero-actions .product-leaflet-link');
+						var textGroup = [eyebrow, title, desc, detailsEl].filter(Boolean);
+
+						// Active-state toggle, scoped strictly to this slide's own version tiles
+						slide.querySelectorAll('.product-version-tile').forEach(function (t) {
+							t.classList.toggle('is-active', t.getAttribute('data-version-id') === item.id);
+						});
+
+						function applyImage() {
+							img.src = item.img;
+							img.alt = 'TIMAK ' + tItem(item, 'title');
+						}
+
+						function applyText() {
+							var itemTitle = tItem(item, 'title');
+							var catLabel = tCat(cat);
+							if (eyebrow) eyebrow.textContent = catLabel;
+							title.textContent = itemTitle;
+							desc.textContent = tItem(item, 'desc');
+							if (detailsEl) {
+								detailsEl.innerHTML =
+									'<span>' + tUI('products.categoryLabel', 'Category:') + ' <b>' + catLabel + '</b></span>' +
+									'<span>' + tUI('products.configLabel', 'Configuration:') + ' <b>' + tUI('products.configValue', item.configuration) + '</b></span>' +
+									'<span>' + tUI('products.originLabel', 'Origin:') + ' <b>' + tUI('products.originValue', item.origin) + '</b></span>';
+							}
+							if (offerLink) offerLink.setAttribute('href', 'contact.html?product=' + encodeURIComponent(itemTitle) + '#contactForm');
+							if (leafletLink) {
+								if (item.leaflet) {
+									leafletLink.setAttribute('href', item.leaflet);
+									leafletLink.setAttribute('target', '_blank');
+									leafletLink.setAttribute('rel', 'noopener');
+									leafletLink.removeAttribute('aria-disabled');
+									leafletLink.removeAttribute('tabindex');
+									leafletLink.classList.remove('d-none');
+								} else {
+									leafletLink.removeAttribute('href');
+									leafletLink.setAttribute('aria-disabled', 'true');
+									leafletLink.setAttribute('tabindex', '-1');
+									leafletLink.classList.add('d-none');
+								}
+							}
+						}
+
+						if (!animate || typeof gsap === 'undefined') { applyImage(); applyText(); return; }
+
+						gsap.to(heroImgBlock, { opacity: 0, duration: .18, ease: 'power1.out', onComplete: function () {
+							applyImage();
+							gsap.to(heroImgBlock, { opacity: 1, duration: .3, ease: 'power2.out' });
+						} });
+						gsap.to(textGroup, { opacity: 0, y: 6, duration: .15, ease: 'power1.out', onComplete: function () {
+							applyText();
+							gsap.to(textGroup, { opacity: 1, y: 0, duration: .35, ease: 'power2.out' });
+						} });
+					}
+
+					// Set every rendered slide's featured product back to its own first version (no animation) —
+					// runs once per (re)build, right after the slides are stamped into the DOM.
+					function bindVersionTiles() {
+						stage.querySelectorAll('.product-slide').forEach(function (slide) {
+							var cat = categories.filter(function (c) { return c.slug === slide.getAttribute('data-category'); })[0];
+							if (!cat || !cat.items.length) return;
+							applyVersionToSlide(slide, cat, cat.items[0], false);
+						});
+					}
+
+					// ONE delegated click handler for the entire products stage, attached exactly once for the
+					// life of the page (never re-attached per rebuild, so it can never end up bound only to
+					// whichever category happened to be in the DOM at some earlier point). On every click it
+					// re-derives the clicked card's own slide/category/version fresh from the DOM — no cached
+					// or global-scope element references, so every category behaves identically.
+					stage.addEventListener('click', function (e) {
+						var tile = e.target.closest('.product-version-tile');
+						if (!tile || !stage.contains(tile)) return;
+						var slide = tile.closest('.product-slide');
+						if (!slide) return;
+						var cat = categories.filter(function (c) { return c.slug === slide.getAttribute('data-category'); })[0];
+						if (!cat) return;
+						var versionId = tile.getAttribute('data-version-id');
+						var item = cat.items.filter(function (it) { return it.id === versionId; })[0];
+						if (!item) return; // no matching data entry for this card's id — do nothing rather than mis-wire
+						applyVersionToSlide(slide, cat, item, true);
+					});
+
+					// ONE delegated click handler for the category jump-nav pills, attached exactly once. It
+					// always calls whichever scrollToCategoryImpl the CURRENTLY built mode (pinned or flat) has
+					// installed, so it stays correct across resize-triggered rebuilds without re-binding.
+					document.getElementById('categoryJumpnavList').addEventListener('click', function (e) {
+						var a = e.target.closest('a[data-category]');
+						if (!a) return;
+						e.preventDefault();
+						if (scrollToCategoryImpl) scrollToCategoryImpl(a.getAttribute('data-category'));
+					});
+
+					function teardown() {
+						if (activeTimeline) {
+							if (activeTimeline.scrollTrigger) activeTimeline.scrollTrigger.kill();
+							activeTimeline.kill();
+							activeTimeline = null;
+						}
+						stage.innerHTML = '';
+						stage.className = 'products-stage';
+						stage.style.height = '';
+						jumpLinks.forEach(function (a) { a.classList.remove('js-group-nav', 'is-current'); });
+						progressEl.classList.add('d-none');
+						progressEl.innerHTML = '';
+						scrollToCategoryImpl = null;
+					}
+
+					function buildFlat() {
+						stage.classList.add('products-stage-flat');
+						var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+						stage.innerHTML = categories.map(function (cat) {
+							return slideHTML(cat, reduce ? '' : 'wow fadeInUp');
+						}).join('');
+						if (!reduce && window.WOW) { new window.WOW().init(); }
+						bindVersionTiles();
+
+						// Flat mode: categories are real, non-overlapping elements in normal document flow —
+						// scrolling to one is a direct offset scroll rather than a ScrollTrigger progress calc.
+						scrollToCategoryImpl = function (slug, opts) {
+							var el = document.getElementById(slug);
+							if (!el) return false;
+							var catIdx = categoryOrder.indexOf(slug);
+							if (catIdx >= 0) {
+								// No pinned crossfade to drive it here, but the jump-nav pill should still reflect
+								// which category is now in view.
+								jumpLinks.forEach(function (a) {
+									a.classList.toggle('is-current', a.getAttribute('data-category') === slug);
+								});
+							}
+							var duration = (opts && opts.duration) || 1.2;
+							var offset = STICKY_OFFSET; // clears the sticky site header + sticky category jump-nav bar
+							var top = el.getBoundingClientRect().top + window.scrollY - offset;
+							if (window.lenis) {
+								window.lenis.scrollTo(el, { duration: duration, offset: -offset, immediate: !!(opts && opts.immediate) });
+							} else {
+								window.scrollTo({ top: top, behavior: (opts && opts.immediate) ? 'auto' : 'smooth' });
+							}
+							return top; // the resolved target Y, so callers can verify convergence
+						};
+
+						jumpLinks.forEach(function (a) { a.classList.add('js-group-nav'); });
+					}
+
+					// Group a slide's version tiles into visual rows using real rendered rects (breakpoint-independent),
+					// measured relative to the slide's own panning wrapper so row positions are local coordinates.
+					function measureRows(contentEl) {
+						var baseTop = contentEl.getBoundingClientRect().top;
+						var tiles = Array.prototype.slice.call(contentEl.querySelectorAll('.product-version-tile'));
+						var rows = [];
+						tiles.forEach(function (tile) {
+							var rect = tile.getBoundingClientRect();
+							var top = rect.top - baseTop;
+							var row = rows.filter(function (r) { return Math.abs(r.top - top) < 2; })[0];
+							if (!row) { row = { top: top, bottom: 0, tiles: [] }; rows.push(row); }
+							row.bottom = Math.max(row.bottom, rect.bottom - baseTop);
+							row.tiles.push(tile);
+						});
+						rows.sort(function (a, b) { return a.top - b.top; });
+						return rows;
+					}
+
+					// Compute how far to pan the content wrapper (translateY) so each successive version row
+					// becomes fully visible inside the fixed-height pinned viewport window, never cropped.
+					var ROW_BOTTOM_PAD = 32;
+					function computeRowOffsets(contentEl, rows, windowHeight) {
+						var offsets = [0];
+						if (!rows.length) return offsets;
+						var maxAllowedShift = Math.max(0, contentEl.scrollHeight - windowHeight);
+						var shift = 0;
+						for (var r = 1; r < rows.length; r++) {
+							var needed = rows[r].bottom + ROW_BOTTOM_PAD - windowHeight;
+							if (needed > shift) shift = needed;
+							if (shift > maxAllowedShift) shift = maxAllowedShift;
+							offsets.push(-shift);
+						}
+						return offsets;
+					}
+
+					function computeStageWindowHeight() {
+						return Math.max(420, window.innerHeight - STICKY_OFFSET - 24);
+					}
+
+					function buildPinned() {
+						stage.classList.add('products-stage-pinned');
+						stage.innerHTML = categories.map(function (cat, i) {
+							return slideHTML(cat, i === 0 ? 'is-active' : '');
+						}).join('');
+						bindVersionTiles();
+
+						var slideEls = Array.prototype.slice.call(stage.querySelectorAll('.product-slide'));
+						if (slideEls.length <= 1) return;
+
+						var windowHeight = computeStageWindowHeight();
+						stage.style.height = windowHeight + 'px';
+
+						// Elements animated in sequence within each slide's initial entrance: image -> eyebrow -> title -> description -> details -> actions -> versions heading
+						function innerEls(slide) {
+							return [
+								slide.querySelector('.product-hero-image'),
+								slide.querySelector('.timak-product-eyebrow'),
+								slide.querySelector('.product-hero-title'),
+								slide.querySelector('.product-hero-desc'),
+								slide.querySelector('.product-hero-details'),
+								slide.querySelector('.product-hero-actions'),
+								slide.querySelector('.product-versions-heading')
+							].filter(Boolean);
+						}
+
+						var contentEls = slideEls.map(function (slide) { return slide.querySelector('.product-slide-content'); });
+
+						// Measure each slide's version rows and the pan distance needed to reveal each one in full
+						var slideRows = contentEls.map(function (contentEl) { return measureRows(contentEl); });
+						var slideOffsets = slideRows.map(function (rows, i) { return computeRowOffsets(contentEls[i], rows, windowHeight); });
+
+						slideEls.forEach(function (slide, i) {
+							gsap.set(slide, i === 0 ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 40, scale: .96 });
+							gsap.set(innerEls(slide), i === 0 ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 });
+							gsap.set(contentEls[i], { y: 0 });
+						});
+
+						// Build a flat sequence of "stops": stop 0 per category = main product + first versions row
+						// (baseline pan position), then one extra stop per additional versions row, before advancing
+						// to the next category. A category with only one row contributes just its baseline stop.
+						var stops = [];
+						slideEls.forEach(function (slide, catIdx) {
+							var rowCount = slideRows[catIdx].length;
+							stops.push({ cat: catIdx, offsetIdx: 0 });
+							for (var r = 1; r < rowCount; r++) {
+								stops.push({ cat: catIdx, offsetIdx: r });
+							}
+						});
+
+						// Progress indicator (tracks category, not individual micro-stop)
+						progressEl.classList.remove('d-none');
+						progressEl.innerHTML = '<div class="products-progress-track"><div class="products-progress-fill" id="productsProgressFill"></div></div><span class="products-progress-label" id="productsProgressLabel">01 / ' + String(slideEls.length).padStart(2, '0') + '</span>';
+						var fillEl = document.getElementById('productsProgressFill');
+						var labelEl = document.getElementById('productsProgressLabel');
+
+						function setActiveCategory(catIdx) {
+							var pct = (catIdx / (slideEls.length - 1)) * 100;
+							fillEl.style.width = pct + '%';
+							labelEl.textContent = String(catIdx + 1).padStart(2, '0') + ' / ' + String(slideEls.length).padStart(2, '0');
+							jumpLinks.forEach(function (a) {
+								var cat = a.getAttribute('data-category');
+								a.classList.toggle('is-current', categories[catIdx].slug === cat);
+							});
+							// Deterministic every frame — never depends on a tween's onStart firing, so the
+							// correct slide is always the only one accepting clicks (see pointer-events CSS),
+							// regardless of scroll direction, speed, or jumps via the category nav.
+							slideEls.forEach(function (slide, i) {
+								slide.classList.toggle('is-active', i === catIdx);
+							});
+						}
+						setActiveCategory(0);
+
+						var steps = stops.length - 1;
+						var perStep = Math.max(260, Math.min(420, 7200 / steps));
+
+						activeTimeline = gsap.timeline({
+							scrollTrigger: {
+								trigger: stage,
+								start: 'top top+=' + STICKY_OFFSET,
+								end: '+=' + Math.round(steps * perStep),
+								pin: true,
+								scrub: 0.65,
+								anticipatePin: 1,
+								invalidateOnRefresh: true,
+								onUpdate: function (self) {
+									var stopIdx = Math.round(self.progress * steps);
+									setActiveCategory(stops[stopIdx].cat);
+								}
+							}
+						});
+
+						var STAGGER_STEP = 0.08;
+
+						for (var s = 1; s < stops.length; s++) {
+							(function (prevStop, thisStop, t) {
+								if (prevStop.cat === thisStop.cat) {
+									// Same product: pan the content upward by exactly the distance needed so the
+									// next versions row sits fully inside the viewport window — nothing cropped.
+									var contentEl = contentEls[thisStop.cat];
+									var fromY = slideOffsets[thisStop.cat][prevStop.offsetIdx];
+									var toY = slideOffsets[thisStop.cat][thisStop.offsetIdx];
+									activeTimeline.fromTo(contentEl, { y: fromY }, {
+										y: toY, duration: .7, ease: 'power2.inOut'
+									}, t);
+								} else {
+									// Crossing into the next product: full premium fade / slide / scale transition
+									var outgoing = slideEls[prevStop.cat];
+									var incoming = slideEls[thisStop.cat];
+									var inEls = innerEls(incoming);
+
+									activeTimeline.to(outgoing, {
+										opacity: 0, y: -34, scale: .96, duration: .8, ease: 'power1.inOut'
+									}, t);
+
+									activeTimeline.fromTo(incoming, { opacity: 0, y: 40, scale: .96 }, {
+										opacity: 1, y: 0, scale: 1, duration: 1.1, ease: 'power2.out'
+									}, t + 0.25);
+
+									inEls.forEach(function (el, elIdx) {
+										activeTimeline.fromTo(el, { opacity: 0, y: 18 }, {
+											opacity: 1, y: 0, duration: .55, ease: 'power2.out'
+										}, t + 0.3 + (elIdx * STAGGER_STEP));
+									});
+								}
+							})(stops[s - 1], stops[s], s - 1);
+						}
+
+						// Jump straight to a category's first stop (main product + first row) — shared by the
+						// jump-nav pills below and by an incoming products.html#<category> deep link on load.
+						scrollToCategoryImpl = function (slug, opts) {
+							var catIdx = categoryOrder.indexOf(slug);
+							if (catIdx < 0) return false;
+							if (!activeTimeline || !activeTimeline.scrollTrigger) return false;
+							var stopIdx = stops.map(function (st) { return st.cat; }).indexOf(catIdx);
+							if (stopIdx < 0) return false;
+							// Activate immediately — don't wait for the scroll-driven onUpdate tick to catch up,
+							// since a jump (deep link, pill click) can land far from the current scroll position.
+							setActiveCategory(catIdx);
+							var st2 = activeTimeline.scrollTrigger;
+							var targetY = st2.start + (st2.end - st2.start) * (stopIdx / steps);
+							var duration = (opts && opts.duration) || 1.2;
+							if (window.lenis) {
+								window.lenis.scrollTo(targetY, { duration: duration, immediate: !!(opts && opts.immediate) });
+							} else {
+								window.scrollTo({ top: targetY, behavior: (opts && opts.immediate) ? 'auto' : 'smooth' });
+							}
+							return targetY; // the resolved target Y, so callers can verify convergence
+						};
+
+						jumpLinks.forEach(function (a) { a.classList.add('js-group-nav'); });
+					}
+
+					function decideMode() {
+						var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+						var desktop = window.innerWidth >= 992;
+						var hasLibs = typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined';
+						return (desktop && !reduce && hasLibs) ? 'pinned' : 'flat';
+					}
+
+					function init() {
+						var mode = decideMode();
+						if (mode === currentMode) return;
+						teardown();
+						currentMode = mode;
+						if (mode === 'pinned') { buildPinned(); } else { buildFlat(); }
+						if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+					}
+
+					if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+						gsap.registerPlugin(ScrollTrigger);
+					}
+					init();
+
+					// Re-render the whole catalog (titles, descriptions, category labels, button text)
+					// when the language changes. init() alone won't do it since the responsive mode
+					// (pinned/flat) hasn't changed — force a teardown + rebuild regardless.
+					document.addEventListener('timak:langchange', function () {
+						teardown();
+						currentMode = null;
+						init();
+					});
+
+					// Deep link support: products.html#<category> (e.g. clicked from a product card on another
+					// page) must land on that exact section, not just the top of the page. The stage is built
+					// entirely by this script, so the browser's native hash-scroll-on-load has nothing to target
+					// yet when it runs — this reads the hash AFTER the products are rendered and replaces it.
+					//
+					// In pinned mode, scrollToCategoryImpl's target Y is a fraction of the ScrollTrigger's
+					// (start, end) range. For category index 0 that fraction is always 0, so it resolves to
+					// `start` alone and looks correct even if `end` was measured too early (before product
+					// images finished loading and the row/pin distances were still settling) — every other
+					// category depends on `end` being accurate, and silently lands in the wrong place if it
+					// isn't. So this forces a fresh ScrollTrigger.refresh() to re-measure against final layout
+					// before reading start/end, with a couple of animation-frame ticks afterwards so the
+					// refreshed values have actually been committed before scrollToCategoryImpl reads them.
+					// scrollToCategoryImpl itself both activates the category (progress bar, jump-nav
+					// highlight, and — in pinned mode — the .is-active slide/pointer-events state) and scrolls
+					// to it, so activation is never left waiting on the scroll animation to catch up.
+					// requestAnimationFrame is NOT a reliable gate here — confirmed by instrumented testing that
+					// it can simply never fire in some runtime conditions, silently dropping the deep link with
+					// no error. Polling with setTimeout instead: retry until scrollToCategoryImpl exists for the
+					// CURRENTLY built mode and actually succeeds, bounded so a genuinely bad hash gives up.
+					function openProductFromHash() {
+						var slug = (window.location.hash || '').replace('#', '');
+						if (!slug || categoryOrder.indexOf(slug) < 0) return;
+
+						var attempts = 0;
+						var maxAttempts = 60; // ~3s at 50ms — comfortably covers init()/build + image-driven layout settling
+						function tryOpen() {
+							attempts++;
+							if (typeof ScrollTrigger !== 'undefined') ScrollTrigger.refresh();
+							// scrollToCategoryImpl returns the resolved target Y (a number, possibly 0) on
+							// success, or false if the mode isn't built/ready yet — check with !== false so a
+							// legitimate target near the top of the page isn't mistaken for failure.
+							var target = scrollToCategoryImpl ? scrollToCategoryImpl(slug, { immediate: true }) : false;
+							if (target === false) {
+								if (attempts < maxAttempts) setTimeout(tryOpen, 50);
+								return;
+							}
+							// Lenis applies "immediate" scroll on its own internal update loop, not necessarily
+							// synchronously within this call — verify the page actually reached the target
+							// before declaring success, and nudge it again if it hasn't caught up yet.
+							setTimeout(function () {
+								if (Math.abs(window.scrollY - target) > 40 && attempts < maxAttempts) {
+									setTimeout(tryOpen, 50);
+								}
+							}, 120);
+						}
+						tryOpen();
+					}
+
+					if (window.location.hash) {
+						if (document.readyState === 'complete') {
+							setTimeout(openProductFromHash, 50);
+						} else {
+							window.addEventListener('load', function () {
+								setTimeout(openProductFromHash, 50);
+							});
+						}
+					}
+
+					// Same-document hash changes (e.g. a products.html#<category> link clicked while already on
+					// this page) and browser back/forward navigation don't trigger a reload, so nothing else
+					// would react to them without these.
+					window.addEventListener('hashchange', openProductFromHash);
+					window.addEventListener('popstate', openProductFromHash);
+
+					window.addEventListener('resize', function () {
+						clearTimeout(resizeTimer);
+						resizeTimer = setTimeout(init, 300);
+					});
+				});
+			})();
+			</script>
+	</body>
+</html>

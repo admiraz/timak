@@ -1,0 +1,266 @@
+.team-wrapper {   
+    --#{$prefix}link-color-rgb: var(--#{$prefix}secondary-rgb);
+    --#{$prefix}link-color: var(--#{$prefix}secondary);
+    --#{$prefix}link-hover-color: var(--#{$prefix}primary);
+    --#{$prefix}link-hover-color-rgb: var(--#{$prefix}primary-rgb);
+    --#{$prefix}team-wrapper-after-bg: rgba(236, 245, 255, 0.8);
+    .team-author-image img{
+        transition: transform .4s ease-in-out;
+    }
+    .contact-lists{
+        position: absolute;
+        top: calc(50% - 14px);
+        left: calc(50% - 87px);
+        opacity: 0;
+        transition: opacity .4s ease-in-out;
+        z-index: 2;
+    }
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--#{$prefix}team-wrapper-after-bg);
+        opacity: 0;
+        transition: opacity .4s ease-in-out;
+    }
+    .author-name{
+        --#{$prefix}link-hover-animation-color: var(--#{$prefix}secondary);
+        background: linear-gradient(to right, var(--#{$prefix}link-hover-animation-color) 0%, var(--#{$prefix}link-hover-animation-color) 100%);
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-size: auto;
+        background-size: 0px 2px;
+        background-repeat: no-repeat;
+        background-position: left 100%;
+        -webkit-transition-duration: 0.5s;
+        transition-duration: 0.5s;    
+        --#{$prefix}btn-border-radius: 0 !important; 
+    }
+    &:hover{
+        .team-author-image img{
+            transform: scale(1.03);
+        }
+        .team-details{            
+            --#{$prefix}team-details-width: 100%;
+        }
+        .team-arrow-icon,.contact-lists{
+            opacity: 1;
+        }    
+        &::after{
+            opacity: 1;  
+        } 
+        .author-name{
+            background-size: 100% 2px;
+        }   
+    }
+}
+.team-descriptions{
+    --#{$prefix}team-descriptions-padding: 100px;
+    padding-left: var(--#{$prefix}team-descriptions-padding);
+    @include media-breakpoint-down(lg){
+        --#{$prefix}team-descriptions-padding: 60px;
+    }
+}
+.team-arrow-icon{
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+    color: var(--#{$prefix}secondary);
+}
+.team-details{
+    --#{$prefix}team-details-bg: #f6f5f4;
+    --#{$prefix}team-details-width: calc(100% - 87px);
+    --#{$prefix}team-line-spacing: 8px;
+    --#{$prefix}team-line-width: 1px;
+    --#{$prefix}team-line-color: var(--#{$prefix}secondary);
+
+    background-color: var(--#{$prefix}team-details-bg);
+    width: var(--#{$prefix}team-details-width);
+    position: absolute;
+    bottom: -60px;
+    left: 0;    
+    transition: width .4s ease-in-out;
+    z-index: 1;
+}
+@media (min-width: 769px) and (max-width:991.9px){
+    .team-details{
+        --#{$prefix}team-details-width: calc(100% - 58px);
+    }
+}
+
+@media (min-width: 992px) and (max-width:1199px){
+    .team-details{
+        --#{$prefix}team-details-width: calc(100% - 16px);
+    }
+}
+
+@media (min-width: 769px) and (max-width:1199px){    
+    .team-wrapper {        
+        &:hover{            
+            .team-details{            
+                --#{$prefix}team-details-width: 100%;
+            }            
+        }
+    }
+}
+@media (min-width: 300px) and (max-width:350px){
+    .team-details{
+        --#{$prefix}team-details-width: calc(100% - 50px);
+    }
+}
+.team-details-inner{
+    padding: 1rem 1rem 1rem 1.5rem;
+    p{
+        color: var(--#{$prefix}body-color);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+.team-line-horizontal{       
+    
+    &::after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: var(--#{$prefix}team-line-width);
+        background: var(--#{$prefix}team-line-color);
+        top: var(--#{$prefix}team-line-spacing);
+        left: 0;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: var(--#{$prefix}team-line-width);
+        background: var(--#{$prefix}team-line-color);
+        bottom: var(--#{$prefix}team-line-spacing);
+        left: 0;
+    }
+}
+.team-line-vertical{
+    &::after{
+        content: "";
+        position: absolute;
+        width: var(--#{$prefix}team-line-width);
+        height: 100%;
+        background: var(--#{$prefix}team-line-color);
+        top: 0;
+        left: var(--#{$prefix}team-line-spacing);
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        width: var(--#{$prefix}team-line-width);
+        height: 100%;
+        background: var(--#{$prefix}team-line-color);
+        top: 0;
+        right: var(--#{$prefix}team-line-spacing);
+    }
+}
+.author-wrapper{
+    --#{$prefix}author-wrapper-gap: 38px;
+    --#{$prefix}author-description-margin: 22px;
+    position: relative;
+    z-index: 1;
+    gap: var(--#{$prefix}author-wrapper-gap);
+    .author-descriptions{
+        margin-top: var(--#{$prefix}author-description-margin)
+    }
+    @include media-breakpoint-down(xl){
+        --#{$prefix}author-wrapper-gap: 14px;
+        --#{$prefix}author-description-margin: 16px;
+    }
+    @include media-breakpoint-down(lg){
+        .author-image img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    @include media-breakpoint-down(md){
+        --#{$prefix}author-wrapper-gap: 24px;
+        --#{$prefix}author-description-margin: 8px;        
+    }
+}
+.author-name{
+    padding-bottom: 1px;
+    transition: all .3s ease-in-out;
+    display: inline-block;
+}
+.team-inner{
+    --#{$prefix}team-inner-padding-top: 200px;
+    --#{$prefix}team-style-1-spacing: -70px;
+    --#{$prefix}team-style-2-spacing: -165px;
+    padding-top: var(--#{$prefix}team-inner-padding-top);
+    @include media-breakpoint-down(lg){
+        --#{$prefix}team-inner-padding-top: 0;
+        --#{$prefix}team-style-1-spacing: 0;
+        --#{$prefix}team-style-2-spacing: 0;
+    }
+}
+.team-style-1{
+    top: var(--#{$prefix}team-style-1-spacing);
+}
+.team-style-2{
+    top: var(--#{$prefix}team-style-2-spacing);
+}
+.team-contact-list{
+    .contact-lists{
+        --#{$prefix}contact-lists-gap: 16px;
+        --#{$prefix}contact-lists-content-top-spacing: 6px;
+        --#{$prefix}contact-lists-content-height: 16px;
+    }    
+    li span{
+        width: 100px;
+    }
+}
+.portfolio-wrapper{
+    transition: all .3s ease-in-out;
+    a{
+        text-decoration: none;
+        --#{$prefix}link-hover-animation-color: var(--#{$prefix}primary);
+        background: linear-gradient(to right, var(--#{$prefix}link-hover-animation-color) 0%, var(--#{$prefix}link-hover-animation-color) 100%);
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-size: auto;
+        background-size: 0px 2px;
+        background-repeat: no-repeat;
+        background-position: left 100%;
+        -webkit-transition-duration: 0.5s;
+        transition-duration: 0.5s;    
+        --#{$prefix}btn-border-radius: 0 !important;
+    }
+    .portfolio-image img{
+        transition: all .3s ease-in-out;
+    }
+    &:hover{
+        .portfolio-image img{
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        }
+        a{
+            background-size: 100% 2px;
+        }
+    }
+}
+
+.portfolio-image.overlay{
+    --#{$prefix}overlay-height: 80%;
+    --#{$prefix}overlay-bg: linear-gradient(180deg, rgba(217, 217, 217, 0.00) 2%, #FFF 153.57%);
+    right: auto;
+    left: 0;
+}
+
+.portfolio-title{
+    left: 30px;
+    bottom: 30px;
+    margin-bottom: 0;
+    @include media-breakpoint-down(lg){
+        left: 24px;
+        h4{
+            font-size: 25px;
+        }
+    }
+}

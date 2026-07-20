@@ -1,0 +1,112 @@
+.video-contents{
+    --#{$prefix}video-contents-bg: var(--#{$prefix}secondary);
+    --#{$prefix}video-contents-color: var(--#{$prefix}white);
+    --#{$prefix}heading-color: var(--#{$prefix}white);
+    --#{$prefix}video-contents-bg-width: 1392px;
+    --#{$prefix}video-contents-bg-height: 727px;
+    --#{$prefix}video-contents-padding-top: 100px;
+    position: relative;
+    color: var(--#{$prefix}video-contents-color);
+    padding-top: var(--#{$prefix}video-contents-padding-top);
+    padding-bottom: var(--#{$prefix}video-contents-padding-bottom, 0);
+    .video-contents-inner{
+        position: relative;
+        z-index: 2;
+    }    
+    &:before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: var(--#{$prefix}video-contents-bg);
+        width: var(--#{$prefix}video-contents-bg-width);
+        height:  var(--#{$prefix}video-contents-bg-height);
+        z-index: 1;
+    }  
+    @include media-breakpoint-down(xxl){
+        --#{$prefix}video-contents-bg-width: 1040px;
+        --#{$prefix}video-contents-bg-height: 640px;
+        --#{$prefix}video-contents-padding-top: 90px;
+    }
+    @include media-breakpoint-down(xl){
+        --#{$prefix}video-contents-bg-width: 940px;
+        --#{$prefix}video-contents-bg-height: 640px;
+        --#{$prefix}video-contents-padding-top: 62px
+    }
+    @include media-breakpoint-down(lg){
+        --#{$prefix}video-contents-bg-width: 100%;
+        --#{$prefix}video-contents-bg-height: 100%;
+        --#{$prefix}video-contents-padding-top: 60px;
+        --#{$prefix}video-contents-padding-bottom: 60px;        
+    }
+}
+@media screen and (min-width:1401px) and (max-width: 1750px){
+    .video-contents{
+        --#{$prefix}video-contents-bg-width: 1210px;
+        --#{$prefix}video-contents-bg-height: 716px;
+    }
+}
+.video-contents-list{
+    --#{$prefix}video-contents-list-padding: 25px 0 70px 0;
+    --#{$prefix}video-contents-list-gap: 25px;
+    --#{$prefix}video-contents-list--hover-gap: 30px;
+    --#{$prefix}video-contents-list-fs: 24px;
+    padding: var(--#{$prefix}video-contents-list-padding);
+    li{
+        gap: var(--#{$prefix}video-contents-list-gap);
+        font-size: var(--#{$prefix}video-contents-list-fs);
+        font-weight: 700;
+        transition: all 0.35s ease-in-out;
+        &:hover{            
+            gap: var(--#{$prefix}video-contents-list--hover-gap);       
+        }
+    }
+    @include media-breakpoint-down(xxl){
+        --#{$prefix}video-contents-list-padding: 20px 0 50px 0;
+        --#{$prefix}video-contents-list-gap: 20px;
+        --#{$prefix}video-contents-list--hover-gap: 35px;
+        --#{$prefix}video-contents-list-fs: 22px;        
+    }
+    @include media-breakpoint-down(lg){
+        --#{$prefix}video-contents-list-padding: 10px 0 40px 0;
+        --#{$prefix}video-contents-list-gap: 16px;
+        --#{$prefix}video-contents-list--hover-gap: 20px;
+        --#{$prefix}video-contents-list-fs: 18px;        
+    }    
+}
+.video-image-wrapper{
+    --#{$prefix}video-img-left-spacing: 111px;
+    left: var(--#{$prefix}video-img-left-spacing);
+    @include media-breakpoint-down(xxl){
+        --#{$prefix}video-img-left-spacing: 0;
+    }
+}
+.video-popup{
+  --#{$prefix}video-popup-area-width: 108px;
+  --#{$prefix}video-popup-area-height: 108px;
+  --#{$prefix}video-icon-margin-left: 10px;
+  --#{$prefix}video-popup-bg: rgba(217, 217, 217, 0.78);
+  position: absolute;
+  top: calc(50% - (var(--#{$prefix}video-popup-area-width)) *.5);
+  left: calc(50% - (var(--#{$prefix}video-popup-area-height)) *.5);
+  background: var(--#{$prefix}video-popup-bg);
+  border-radius: 50%;
+  width: var(--#{$prefix}video-popup-area-width);
+  height: var(--#{$prefix}video-popup-area-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(2px);
+  .video-icon{
+    margin-left: var(--#{$prefix}video-icon-margin-left);
+  }
+  @include media-breakpoint-down(lg){
+    --#{$prefix}video-popup-area-width: 80px;
+    --#{$prefix}video-popup-area-height: 80px;
+    --#{$prefix}video-icon-margin-left: 5px;
+    svg{
+        width: 24px;
+        height: 24px;
+    }
+  }
+}

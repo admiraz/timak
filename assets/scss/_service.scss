@@ -1,0 +1,102 @@
+@media (min-width: 1470.1px) and (max-width:1670px){
+    .service-title{
+        font-size: 27px;
+    }    
+}
+@media (min-width: 1350px) and (max-width:1470px){
+    .service-title{
+        font-size: 25px;
+    }    
+}
+@media (max-width:1349px){
+    .service-title{
+        font-size: 23px;
+    }    
+}
+
+@include media-breakpoint-down(lg){
+    .service-details,.service-wrapper{
+        padding: 0 12px;
+    }
+}
+
+.service-details {
+    .stroke-heading{
+        --#{$prefix}stroke-heading-height: 130px;
+        margin-bottom: 1rem;
+        @include media-breakpoint-down(xl){
+            --#{$prefix}stroke-heading-height: 122px;
+        }
+        @include media-breakpoint-down(lg){
+            --#{$prefix}stroke-heading-height: 108px;
+        }
+        @include media-breakpoint-down(md){
+            --#{$prefix}stroke-heading-height: 90px;
+        }
+        @include media-breakpoint-down(sm){
+            --#{$prefix}stroke-heading-height: 78px;
+        }
+    }     
+}
+
+.feedback-1{
+    --#{$prefix}section-feedback-color : var(--#{$prefix}white);
+    --#{$prefix}heading-color: var(--#{$prefix}section-feedback-color);    
+}
+.feedback-wrapper{
+    background-image: var(--#{$prefix}feedback-bg);
+    background-position: center;
+    background-repeat: no-repeat;
+    max-height: 500px;
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.41);
+    }
+}
+.feedback-bg-1{
+    --#{$prefix}feedback-bg: url("../images/feedback-image-1.jpg");
+}
+.feedback-bg-2{
+    --#{$prefix}feedback-bg: url("../images/feedback-image-2.jpg");
+}
+.feedback-bg-3{
+    --#{$prefix}feedback-bg: url("../images/feedback-image-3.jpg");
+}
+.feedback-content{    
+    --#{$prefix}feedback-content-padding: 160px 0;
+    --#{$prefix}feedback-title-max-width: 600px;
+    padding: var(--#{$prefix}feedback-content-padding);
+    position: relative;
+    .feedback-title{
+        max-width: var(--#{$prefix}feedback-title-max-width);
+        margin-bottom: 0;
+    }    
+    @include media-breakpoint-down(xxl){
+        --#{$prefix}feedback-content-padding: 110px 0;
+    }
+    @include media-breakpoint-down(xl){
+        --#{$prefix}feedback-content-padding: 90px 0;
+        --#{$prefix}feedback-title-max-width: 500px;
+        .feedback-title{
+            font-size: 62px;
+        } 
+    }
+    @include media-breakpoint-down(lg){    
+        --#{$prefix}feedback-content-padding: 70px 0;  
+        --#{$prefix}feedback-title-max-width: 400px;  
+        .feedback-title{
+            font-size: 55px;
+        }
+    }
+    @include media-breakpoint-down(sm){  
+        --#{$prefix}feedback-content-padding: 80px 0;           
+        .feedback-title{
+            font-size: 47px;
+        }
+    }
+}
