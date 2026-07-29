@@ -151,7 +151,16 @@
       "Bash(curl -s \"http://localhost:8899/assets/css/rtl.css\")",
       "Bash(rm -f __audit_*.html)",
       "Bash(\"C:/xampp/php/php.exe\" -l assets/css/rtl.css)",
-      "Bash(awk '/<ul class=\"navbar-nav flex-grow-1 align-items-xl-center justify-content-xl-between gap-3\">/{flag=1} flag{print} flag && /<\\\\/ul>/{c++; if\\(c==1\\) exit}' index.html)"
+      "Bash(awk '/<ul class=\"navbar-nav flex-grow-1 align-items-xl-center justify-content-xl-between gap-3\">/{flag=1} flag{print} flag && /<\\\\/ul>/{c++; if\\(c==1\\) exit}' index.html)",
+      "Bash(perl -0ne 'print \"$1\\\\n\" if /<pre id=\"__ffOut\"[^>]*>\\(.*?\\)<\\\\/pre>/s' \"/tmp/ff_contact_390.html\")",
+      "Bash(perl -0ne 'print \"$1\\\\n\" if /Object\\\\.assign\\\\\\(I18N\\\\.ar,\\\\s*\\\\{\\(.*?\\)\\\\}\\\\\\);/s' i18n-data-home.js)",
+      "Bash(perl -0ne 'print \"$1\\\\n\" if /Object\\\\.assign\\\\\\(I18N\\\\.ar,\\\\s*\\\\{\\(.*?\\)\\\\}\\\\\\);/s' i18n-data-about.js)",
+      "Bash(perl -0ne 'print \"$1\\\\n\" if /Object\\\\.assign\\\\\\(I18N\\\\.ar,\\\\s*\\\\{\\(.*?\\)\\\\}\\\\\\);/s' i18n-data-team.js)",
+      "Bash(perl -0ne 'print \"$1\\\\n\" if /Object\\\\.assign\\\\\\(I18N\\\\.ar,\\\\s*\\\\{\\(.*?\\)\\\\}\\\\\\);/s' i18n-data-offices.js)",
+      "Bash(perl -0ne 'print \"$1\\\\n\" if /Object\\\\.assign\\\\\\(I18N\\\\.ar,\\\\s*\\\\{\\(.*?\\)\\\\}\\\\\\);/s' i18n-data-career.js)",
+      "Bash(perl -0ne 'print \"$1\\\\n\" if /Object\\\\.assign\\\\\\(I18N\\\\.ar,\\\\s*\\\\{\\(.*?\\)\\\\}\\\\\\);/s' i18n-data-contact.js)",
+      "Bash(perl -0ne 'print \"$1\\\\n\" if /Object\\\\.assign\\\\\\(I18N\\\\.ar,\\\\s*\\\\{\\(.*?\\)\\\\}\\\\\\);/s' i18n-data-aftersales.js)",
+      "Bash(perl -0ne 'print \"$1\\\\n\" if /Object\\\\.assign\\\\\\(I18N\\\\.ar,\\\\s*\\\\{\\(.*?\\)\\\\}\\\\\\);/s' i18n-data-products.js)"
     ],
     "additionalDirectories": [
       "C:\\Users\\black\\AppData\\Local\\Temp\\claude\\c--xampp-htdocs-timak-timak\\e3c9c026-5556-4869-8cdb-cc39a753a084\\scratchpad"
