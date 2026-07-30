@@ -176,7 +176,15 @@
       "Bash(curl -s -o /dev/null -w \"Engineering logo: %{http_code}\\\\n\" \"http://localhost:8899/assets/images/TIMAK%20LOGO/TIMAK%20Engineering.svg\")",
       "Bash(grep -n \"DOMContentLoaded\\\\|\\\\\\\\\\\\$\\(function\" assets/js/script.js)",
       "Bash(curl -s \"https://api.github.com/repos/admiraz/timak\")",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(git credential *)",
+      "Bash(curl -s -o /dev/null -w \"index.html: %{http_code}\\\\n\" https://admiraz.github.io/timak/)",
+      "Bash(curl -s -o /dev/null -w \"products.html: %{http_code}\\\\n\" https://admiraz.github.io/timak/products.html)",
+      "Bash(curl -s -o /dev/null -w \"style.css: %{http_code}\\\\n\" https://admiraz.github.io/timak/assets/css/style.css)",
+      "Bash(curl -s -o /dev/null -w \"i18n-data-shared.js: %{http_code}\\\\n\" https://admiraz.github.io/timak/assets/js/i18n/i18n-data-shared.js)",
+      "Bash(curl -s -o /dev/null -w \"TIMAK Emergency logo: %{http_code}\\\\n\" \"https://admiraz.github.io/timak/assets/images/TIMAK%20LOGO/TIMAK%20Emergency.svg\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\black\\AppData\\Local\\Temp\\claude\\c--xampp-htdocs-timak-timak\\e3c9c026-5556-4869-8cdb-cc39a753a084\\scratchpad",
