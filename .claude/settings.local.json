@@ -184,7 +184,9 @@
       "Bash(curl -s -o /dev/null -w \"products.html: %{http_code}\\\\n\" https://admiraz.github.io/timak/products.html)",
       "Bash(curl -s -o /dev/null -w \"style.css: %{http_code}\\\\n\" https://admiraz.github.io/timak/assets/css/style.css)",
       "Bash(curl -s -o /dev/null -w \"i18n-data-shared.js: %{http_code}\\\\n\" https://admiraz.github.io/timak/assets/js/i18n/i18n-data-shared.js)",
-      "Bash(curl -s -o /dev/null -w \"TIMAK Emergency logo: %{http_code}\\\\n\" \"https://admiraz.github.io/timak/assets/images/TIMAK%20LOGO/TIMAK%20Emergency.svg\")"
+      "Bash(curl -s -o /dev/null -w \"TIMAK Emergency logo: %{http_code}\\\\n\" \"https://admiraz.github.io/timak/assets/images/TIMAK%20LOGO/TIMAK%20Emergency.svg\")",
+      "Bash(where magick.exe)",
+      "Bash(where convert.exe)"
     ],
     "additionalDirectories": [
       "C:\\Users\\black\\AppData\\Local\\Temp\\claude\\c--xampp-htdocs-timak-timak\\e3c9c026-5556-4869-8cdb-cc39a753a084\\scratchpad",
