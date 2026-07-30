@@ -26,11 +26,16 @@
 			@media (min-width: 1200px){ .timak-logo-header{ height:44px; } }
 			.lang-dropdown .dropdown-menu{ min-width:6rem; }
 			.category-jumpnav{ position:sticky; top:0; z-index:50; background:var(--bs-body-bg,#fff); border-bottom:1px solid rgba(0,0,0,.08); }
-			.category-jumpnav ul{ list-style:none; display:flex; flex-wrap:wrap; gap:8px 4px; margin:0; padding:14px 0; overflow-x:auto; }
+			.category-jumpnav ul{ list-style:none; display:flex; flex-wrap:wrap; align-items:center; gap:8px 4px; margin:0; padding:14px 0; overflow-x:auto; }
 			.category-jumpnav a{ display:inline-block; padding:8px 16px; border-radius:40px; font-weight:600; font-size:.85rem; text-decoration:none; white-space:nowrap; border:1px solid rgba(0,0,0,.12); color:inherit; transition:background-color .2s ease, color .2s ease, border-color .2s ease; }
 			.category-jumpnav a:hover{ background:var(--bs-primary); color:#fff; border-color:var(--bs-primary); }
 			.category-jumpnav a.is-current{ background:var(--bs-primary); color:#fff; border-color:var(--bs-primary); }
+			.category-jumpnav-division{ display:flex; align-items:center; font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--bs-secondary); opacity:.55; white-space:nowrap; padding:0 2px 0 10px; transition:opacity .2s ease, color .2s ease; }
+			.category-jumpnav-division:first-child{ padding-left:0; }
+			.category-jumpnav-division.is-current{ opacity:1; color:var(--bs-primary); }
 			.timak-product-eyebrow{ font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--bs-primary); display:block; margin-bottom:10px; }
+			.product-division-badge{ display:inline-flex; align-items:center; height:44px; }
+			.product-division-badge img{ height:100%; width:auto; max-width:150px; object-fit:contain; }
 
 			/* Large single-product hero slide — clean transparent cutout, no colored box */
 			.product-hero-image{ height:300px; display:flex; align-items:center; justify-content:center; padding:12px; }
@@ -118,26 +123,31 @@
 												</svg>
 											</span>
 										</a>
-										<div class="dropdown-menu dropdown-menu-lg">
-											<div class="row">
-												<div class="col-lg-6">
-													<div class="d-flex flex-column">
-														<a class="dropdown-item" href="products.html#ambulances" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.ambulances">Ambulances</span></a>
-														<a class="dropdown-item" href="products.html#firefighting-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.firefighting">Firefighting Vehicles</span></a>
-														<a class="dropdown-item" href="products.html#mobile-health-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.mobileHealth">Mobile Health Vehicles</span></a>
-														<a class="dropdown-item" href="products.html#law-enforcement-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.lawEnforcement">Law Enforcement Vehicles</span></a>
-													</div>
+										<div class="dropdown-menu dropdown-menu-lg dropdown-menu-divisions">
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="d-flex flex-column">
+													<span class="dropdown-division-label" data-i18n="nav.products.division.emergency">TIMAK Emergency</span>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#ambulances" data-category="ambulances" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.ambulances">Ambulances</span></a>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#firefighting-vehicles" data-category="firefighting-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.firefighting">Firefighting Vehicles</span></a>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#mobile-health-vehicles" data-category="mobile-health-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.mobileHealth">Mobile Health Vehicles</span></a>
+													<span class="dropdown-division-label dropdown-division-label-spaced" data-i18n="nav.products.division.defence">TIMAK Defence</span>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#defence-vehicles" data-category="defence-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.defence">Defence Vehicles</span></a>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#law-enforcement-vehicles" data-category="law-enforcement-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.lawEnforcement">Law Enforcement Vehicles</span></a>
 												</div>
-												<div class="col-lg-6">
-													<div class="d-flex flex-column dropdown-items-separator separator">
-														<a class="dropdown-item" href="products.html#defence-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.defence">Defence Vehicles</span></a>
-														<a class="dropdown-item" href="products.html#pile-drivers" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.pileDrivers">Pile Drivers</span></a>
-														<a class="dropdown-item" href="products.html#customized-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.customized">Customized Vehicles</span></a>
-														<a class="dropdown-item" href="products.html#superstructures" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.superstructures">SuperStructures</span></a>
-													</div>
+											</div>
+											<div class="col-lg-6">
+												<div class="d-flex flex-column dropdown-items-separator separator">
+													<span class="dropdown-division-label" data-i18n="nav.products.division.groundworks">TIMAK Groundworks</span>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#pile-drivers" data-category="pile-drivers" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.pileDrivers">Pile Drivers</span></a>
+													<span class="dropdown-division-label dropdown-division-label-spaced" data-i18n="nav.products.division.utility">TIMAK Utility</span>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#superstructures" data-category="superstructures" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.superstructures">SuperStructures</span></a>
+													<span class="dropdown-division-label dropdown-division-label-spaced" data-i18n="nav.products.division.engineering">TIMAK Engineering</span>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#customized-vehicles" data-category="customized-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.customized">Customized Vehicles</span></a>
 												</div>
 											</div>
 										</div>
+									</div>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link" href="after-sales-services.html" aria-label="nav-links" data-i18n="nav.afterSales">After Sales Services</a>
@@ -211,26 +221,31 @@
 										</svg>
 									</span>
 								</a>
-								<div class="dropdown-menu dropdown-menu-lg">
-									<div class="row">
-										<div class="col-lg-6">
-											<div class="d-flex flex-column">
-												<a class="dropdown-item" href="products.html#ambulances" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.ambulances">Ambulances</span></a>
-												<a class="dropdown-item" href="products.html#firefighting-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.firefighting">Firefighting Vehicles</span></a>
-												<a class="dropdown-item" href="products.html#mobile-health-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.mobileHealth">Mobile Health Vehicles</span></a>
-												<a class="dropdown-item" href="products.html#law-enforcement-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.lawEnforcement">Law Enforcement Vehicles</span></a>
+								<div class="dropdown-menu dropdown-menu-lg dropdown-menu-divisions">
+										<div class="row">
+											<div class="col-lg-6">
+												<div class="d-flex flex-column">
+													<span class="dropdown-division-label" data-i18n="nav.products.division.emergency">TIMAK Emergency</span>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#ambulances" data-category="ambulances" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.ambulances">Ambulances</span></a>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#firefighting-vehicles" data-category="firefighting-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.firefighting">Firefighting Vehicles</span></a>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#mobile-health-vehicles" data-category="mobile-health-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.mobileHealth">Mobile Health Vehicles</span></a>
+													<span class="dropdown-division-label dropdown-division-label-spaced" data-i18n="nav.products.division.defence">TIMAK Defence</span>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#defence-vehicles" data-category="defence-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.defence">Defence Vehicles</span></a>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#law-enforcement-vehicles" data-category="law-enforcement-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.lawEnforcement">Law Enforcement Vehicles</span></a>
+												</div>
 											</div>
-										</div>
-										<div class="col-lg-6">
-											<div class="d-flex flex-column dropdown-items-separator separator">
-												<a class="dropdown-item" href="products.html#defence-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.defence">Defence Vehicles</span></a>
-												<a class="dropdown-item" href="products.html#pile-drivers" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.pileDrivers">Pile Drivers</span></a>
-												<a class="dropdown-item" href="products.html#customized-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.customized">Customized Vehicles</span></a>
-												<a class="dropdown-item" href="products.html#superstructures" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.superstructures">SuperStructures</span></a>
+											<div class="col-lg-6">
+												<div class="d-flex flex-column dropdown-items-separator separator">
+													<span class="dropdown-division-label" data-i18n="nav.products.division.groundworks">TIMAK Groundworks</span>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#pile-drivers" data-category="pile-drivers" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.pileDrivers">Pile Drivers</span></a>
+													<span class="dropdown-division-label dropdown-division-label-spaced" data-i18n="nav.products.division.utility">TIMAK Utility</span>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#superstructures" data-category="superstructures" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.superstructures">SuperStructures</span></a>
+													<span class="dropdown-division-label dropdown-division-label-spaced" data-i18n="nav.products.division.engineering">TIMAK Engineering</span>
+													<a class="dropdown-item dropdown-item-nested" href="products.html#customized-vehicles" data-category="customized-vehicles" aria-label="single-pages"><span class="link-hover-animation-1" data-i18n="nav.products.customized">Customized Vehicles</span></a>
+												</div>
 											</div>
 										</div>
 									</div>
-								</div>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="after-sales-services.html" aria-label="nav-links" data-i18n="nav.afterSales">After Sales Services</a>
@@ -306,14 +321,19 @@
 			<div class="category-jumpnav">
 				<div class="container">
 					<ul id="categoryJumpnavList">
+						<li><span class="category-jumpnav-division" data-division="emergency">TIMAK Emergency</span></li>
 						<li><a href="#ambulances" data-category="ambulances" data-i18n="nav.products.ambulances">Ambulances</a></li>
 						<li><a href="#firefighting-vehicles" data-category="firefighting-vehicles" data-i18n="nav.products.firefighting">Firefighting Vehicles</a></li>
 						<li><a href="#mobile-health-vehicles" data-category="mobile-health-vehicles" data-i18n="nav.products.mobileHealth">Mobile Health Vehicles</a></li>
-						<li><a href="#law-enforcement-vehicles" data-category="law-enforcement-vehicles" data-i18n="nav.products.lawEnforcement">Law Enforcement Vehicles</a></li>
+						<li><span class="category-jumpnav-division" data-division="defence">TIMAK Defence</span></li>
 						<li><a href="#defence-vehicles" data-category="defence-vehicles" data-i18n="nav.products.defence">Defence Vehicles</a></li>
+						<li><a href="#law-enforcement-vehicles" data-category="law-enforcement-vehicles" data-i18n="nav.products.lawEnforcement">Law Enforcement Vehicles</a></li>
+						<li><span class="category-jumpnav-division" data-division="groundworks">TIMAK Groundworks</span></li>
 						<li><a href="#pile-drivers" data-category="pile-drivers" data-i18n="nav.products.pileDrivers">Pile Drivers</a></li>
-						<li><a href="#customized-vehicles" data-category="customized-vehicles" data-i18n="nav.products.customized">Customized Vehicles</a></li>
+						<li><span class="category-jumpnav-division" data-division="utility">TIMAK Utility</span></li>
 						<li><a href="#superstructures" data-category="superstructures" data-i18n="nav.products.superstructures">SuperStructures</a></li>
+						<li><span class="category-jumpnav-division" data-division="engineering">TIMAK Engineering</span></li>
+						<li><a href="#customized-vehicles" data-category="customized-vehicles" data-i18n="nav.products.customized">Customized Vehicles</a></li>
 					</ul>
 				</div>
 			</div>
@@ -545,11 +565,24 @@
 						'customized-vehicles': 'Customized Vehicles',
 						'superstructures': 'SuperStructures'
 					};
-					var categoryOrder = ['ambulances', 'firefighting-vehicles', 'mobile-health-vehicles', 'law-enforcement-vehicles', 'defence-vehicles', 'pile-drivers', 'customized-vehicles', 'superstructures'];
+
+					// TIMAK's five product divisions. Order here drives category order everywhere:
+					// the jump-nav pills, the pinned/flat catalog stage, and (via nav.products.division.*
+					// i18n keys) the navbar dropdown grouping.
+					var divisions = [
+						{ slug: 'emergency', name: 'TIMAK Emergency', logo: 'assets/images/TIMAK LOGO/TIMAK Emergency.svg', categories: ['ambulances', 'firefighting-vehicles', 'mobile-health-vehicles'] },
+						{ slug: 'defence', name: 'TIMAK Defence', logo: 'assets/images/TIMAK LOGO/TIMAK Defence.svg', categories: ['defence-vehicles', 'law-enforcement-vehicles'] },
+						{ slug: 'groundworks', name: 'TIMAK Groundworks', logo: 'assets/images/TIMAK LOGO/TIMAK Groundworks.svg', categories: ['pile-drivers'] },
+						{ slug: 'utility', name: 'TIMAK Utility', logo: 'assets/images/TIMAK LOGO/TIMAK Utility.svg', categories: ['superstructures'] },
+						{ slug: 'engineering', name: 'TIMAK Engineering', logo: 'assets/images/TIMAK LOGO/TIMAK Engineering.svg', categories: ['customized-vehicles'] }
+					];
+					var categoryOrder = divisions.reduce(function (acc, d) { return acc.concat(d.categories); }, []);
+					var categoryToDivision = {};
+					divisions.forEach(function (d) { d.categories.forEach(function (slug) { categoryToDivision[slug] = d; }); });
 
 					// Group the flat product list into one entry per category, each holding all of its versions/models
 					var categories = categoryOrder.map(function (slug) {
-						return { slug: slug, label: categoryLabels[slug], items: products.filter(function (p) { return p.category === slug; }) };
+						return { slug: slug, label: categoryLabels[slug], division: categoryToDivision[slug], items: products.filter(function (p) { return p.category === slug; }) };
 					});
 
 					// i18n lookups. English text lives in `products`/`categoryLabels` above and is
@@ -572,6 +605,11 @@
 						var key = categoryI18nKey[cat.slug];
 						return (window.TIMAK_I18N_ENGINE && key) ? window.TIMAK_I18N_ENGINE.t('nav.products.' + key, cat.label) : cat.label;
 					}
+					function tDivision(division) {
+						// Division names (TIMAK Emergency, TIMAK Defence, ...) are brand sub-labels and stay
+						// identical across every language, same treatment as the TIMAK wordmark itself.
+						return division.name;
+					}
 					function tItem(item, field) {
 						return window.TIMAK_I18N_ENGINE ? window.TIMAK_I18N_ENGINE.t('products.item.' + slugify(item.title) + '.' + field, item[field]) : item[field];
 					}
@@ -581,6 +619,12 @@
 
 					var progressEl = document.getElementById('productsProgress');
 					var jumpLinks = document.querySelectorAll('#categoryJumpnavList a');
+					var divisionLabels = document.querySelectorAll('#categoryJumpnavList .category-jumpnav-division');
+					function setActiveDivision(divisionSlug) {
+						divisionLabels.forEach(function (el) {
+							el.classList.toggle('is-current', el.getAttribute('data-division') === divisionSlug);
+						});
+					}
 					var currentMode = null; // 'pinned' | 'flat'
 					var activeTimeline = null;
 					var resizeTimer;
@@ -621,9 +665,10 @@
 										'<span>' + tUI('products.configLabel', 'Configuration:') + ' <b>' + tUI('products.configValue', main.configuration) + '</b></span>' +
 										'<span>' + tUI('products.originLabel', 'Origin:') + ' <b>' + tUI('products.originValue', main.origin) + '</b></span>' +
 									'</div>' +
-									'<div class="d-flex flex-wrap gap-3 product-hero-actions">' +
+									'<div class="d-flex flex-wrap align-items-center gap-3 product-hero-actions">' +
 										'<a href="contact.html?product=' + encodeURIComponent(mainTitle) + '#contactForm" class="btn btn-lg btn-primary">' + tUI('common.getOffer', 'Get Offer') + '</a>' +
 										'<a href="' + (main.leaflet || '#') + '"' + (main.leaflet ? ' target="_blank" rel="noopener"' : ' aria-disabled="true" tabindex="-1"') + ' class="btn btn-lg btn-outline-secondary product-leaflet-link' + (main.leaflet ? '' : ' d-none') + '">' + tUI('products.leafletButton', 'PRODUCT LEAFLET') + '</a>' +
+										'<span class="product-division-badge"><img src="' + cat.division.logo + '" alt="' + tDivision(cat.division) + '" loading="lazy"></span>' +
 									'</div>' +
 								'</div>' +
 							'</div>' +
@@ -747,6 +792,7 @@
 						stage.className = 'products-stage';
 						stage.style.height = '';
 						jumpLinks.forEach(function (a) { a.classList.remove('js-group-nav', 'is-current'); });
+						divisionLabels.forEach(function (el) { el.classList.remove('is-current'); });
 						progressEl.classList.add('d-none');
 						progressEl.innerHTML = '';
 						scrollToCategoryImpl = null;
@@ -773,6 +819,7 @@
 								jumpLinks.forEach(function (a) {
 									a.classList.toggle('is-current', a.getAttribute('data-category') === slug);
 								});
+								setActiveDivision(categories[catIdx].division.slug);
 							}
 							var duration = (opts && opts.duration) || 1.2;
 							var offset = STICKY_OFFSET; // clears the sticky site header + sticky category jump-nav bar
@@ -891,6 +938,7 @@
 								var cat = a.getAttribute('data-category');
 								a.classList.toggle('is-current', categories[catIdx].slug === cat);
 							});
+							setActiveDivision(categories[catIdx].division.slug);
 							// Deterministic every frame — never depends on a tween's onStart firing, so the
 							// correct slide is always the only one accepting clicks (see pointer-events CSS),
 							// regardless of scroll direction, speed, or jumps via the category nav.

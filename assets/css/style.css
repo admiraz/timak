@@ -4367,6 +4367,33 @@ textarea.form-control-lg {
   background-color: transparent;
 }
 
+/* Products nav dropdown: division group labels + their nested category links */
+.dropdown-division-label {
+  display: block;
+  padding: var(--bs-dropdown-item-padding-y) var(--bs-dropdown-item-padding-x);
+  padding-bottom: 2px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--bs-primary);
+  white-space: nowrap;
+}
+.dropdown-division-label-spaced {
+  margin-top: 10px;
+}
+.dropdown-item-nested {
+  padding-left: calc(var(--bs-dropdown-item-padding-x) + 12px);
+}
+[dir="rtl"] .dropdown-item-nested {
+  padding-left: var(--bs-dropdown-item-padding-x);
+  padding-right: calc(var(--bs-dropdown-item-padding-x) + 12px);
+}
+.dropdown-item-nested.active {
+  color: var(--bs-primary);
+  font-weight: 700;
+}
+
 .dropdown-menu.show {
   display: block;
 }

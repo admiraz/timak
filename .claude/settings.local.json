@@ -160,10 +160,27 @@
       "Bash(perl -0ne 'print \"$1\\\\n\" if /Object\\\\.assign\\\\\\(I18N\\\\.ar,\\\\s*\\\\{\\(.*?\\)\\\\}\\\\\\);/s' i18n-data-career.js)",
       "Bash(perl -0ne 'print \"$1\\\\n\" if /Object\\\\.assign\\\\\\(I18N\\\\.ar,\\\\s*\\\\{\\(.*?\\)\\\\}\\\\\\);/s' i18n-data-contact.js)",
       "Bash(perl -0ne 'print \"$1\\\\n\" if /Object\\\\.assign\\\\\\(I18N\\\\.ar,\\\\s*\\\\{\\(.*?\\)\\\\}\\\\\\);/s' i18n-data-aftersales.js)",
-      "Bash(perl -0ne 'print \"$1\\\\n\" if /Object\\\\.assign\\\\\\(I18N\\\\.ar,\\\\s*\\\\{\\(.*?\\)\\\\}\\\\\\);/s' i18n-data-products.js)"
+      "Bash(perl -0ne 'print \"$1\\\\n\" if /Object\\\\.assign\\\\\\(I18N\\\\.ar,\\\\s*\\\\{\\(.*?\\)\\\\}\\\\\\);/s' i18n-data-products.js)",
+      "Bash(perl -0ne 'my @m = /\\(<div class=\"dropdown-menu dropdown-menu-lg\">.*?<\\\\/div>\\\\s*<\\\\/li>\\)/gs; print scalar\\(@m\\), \" matches\\\\n\"; print $m[0] if @m' index.html)",
+      "Bash(cat > *)",
+      "Bash(xxd)",
+      "Bash(perl -pi -e \"s/\\('nav\\\\.products\\\\.superstructures': '[^']*',\\)/\\\\$1\\\\n\\\\t\\\\t'nav.products.division.emergency': 'TIMAK Emergency',\\\\n\\\\t\\\\t'nav.products.division.defence': 'TIMAK Defence',\\\\n\\\\t\\\\t'nav.products.division.groundworks': 'TIMAK Groundworks',\\\\n\\\\t\\\\t'nav.products.division.utility': 'TIMAK Utility',\\\\n\\\\t\\\\t'nav.products.division.engineering': 'TIMAK Engineering',/\" i18n-data-shared.js)",
+      "Bash(curl -s -o /dev/null -w \"Emergency logo: %{http_code}\\\\n\" \"http://localhost:8899/assets/images/TIMAK%20LOGO/TIMAK%20Emergency.svg\")",
+      "Bash(curl -s -o /dev/null -w \"Defence logo: %{http_code}\\\\n\" \"http://localhost:8899/assets/images/TIMAK LOGO/TIMAK Defence.svg\")",
+      "Bash(curl -s -o /dev/null -w \"Groundworks logo: %{http_code}\\\\n\" \"http://localhost:8899/assets/images/TIMAK LOGO/TIMAK Groundworks.svg\")",
+      "Bash(curl -s -o /dev/null -w \"Utility logo: %{http_code}\\\\n\" \"http://localhost:8899/assets/images/TIMAK LOGO/TIMAK Utility.svg\")",
+      "Bash(curl -s -o /dev/null -w \"Engineering logo: %{http_code}\\\\n\" \"http://localhost:8899/assets/images/TIMAK LOGO/TIMAK Engineering.svg\")",
+      "Bash(curl -s -o /dev/null -w \"Defence logo: %{http_code}\\\\n\" \"http://localhost:8899/assets/images/TIMAK%20LOGO/TIMAK%20Defence.svg\")",
+      "Bash(curl -s -o /dev/null -w \"Groundworks logo: %{http_code}\\\\n\" \"http://localhost:8899/assets/images/TIMAK%20LOGO/TIMAK%20Groundworks.svg\")",
+      "Bash(curl -s -o /dev/null -w \"Utility logo: %{http_code}\\\\n\" \"http://localhost:8899/assets/images/TIMAK%20LOGO/TIMAK%20Utility.svg\")",
+      "Bash(curl -s -o /dev/null -w \"Engineering logo: %{http_code}\\\\n\" \"http://localhost:8899/assets/images/TIMAK%20LOGO/TIMAK%20Engineering.svg\")",
+      "Bash(grep -n \"DOMContentLoaded\\\\|\\\\\\\\\\\\$\\(function\" assets/js/script.js)",
+      "Bash(curl -s \"https://api.github.com/repos/admiraz/timak\")",
+      "Bash(git add *)"
     ],
     "additionalDirectories": [
-      "C:\\Users\\black\\AppData\\Local\\Temp\\claude\\c--xampp-htdocs-timak-timak\\e3c9c026-5556-4869-8cdb-cc39a753a084\\scratchpad"
+      "C:\\Users\\black\\AppData\\Local\\Temp\\claude\\c--xampp-htdocs-timak-timak\\e3c9c026-5556-4869-8cdb-cc39a753a084\\scratchpad",
+      "\\tmp"
     ]
   }
 }
